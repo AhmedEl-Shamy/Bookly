@@ -12,33 +12,36 @@ class BestSellerItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 20),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            height: 125,
-            child: AspectRatio(
-              aspectRatio: 70 / 105,
-              child: Container(
-                padding: const EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                  image: const DecorationImage(
-                    fit: BoxFit.fill,
-                    image: AssetImage(AssetsData.book),
+      child: SizedBox(
+        height: 125,
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 125,
+              child: AspectRatio(
+                aspectRatio: 70 / 105,
+                child: Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    image: const DecorationImage(
+                      fit: BoxFit.fill,
+                      image: AssetImage(AssetsData.book),
+                    ),
                   ),
+                  alignment: AlignmentDirectional.bottomEnd,
                 ),
-                alignment: AlignmentDirectional.bottomEnd,
               ),
             ),
-          ),
-          const SizedBox(
-            width: 30,
-          ),
-          const Expanded(
-            child: BestSellerItemBookInfo(),
-          ),
-        ],
+            const SizedBox(
+              width: 30,
+            ),
+            const Expanded(
+              child: BestSellerItemBookInfo(),
+            ),
+          ],
+        ),
       ),
     );
   }

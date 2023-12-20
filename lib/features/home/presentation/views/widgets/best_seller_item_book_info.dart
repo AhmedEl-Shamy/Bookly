@@ -14,7 +14,7 @@ class BestSellerItemBookInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
@@ -27,7 +27,7 @@ class BestSellerItemBookInfo extends StatelessWidget {
             maxLines: 2,
           ),
         ),
-        const SizedBox(height: 5),
+        // const SizedBox(height: 5),
         Text(
           'J.K. Rowling',
           style: TextStyles.textStyle14.copyWith(
@@ -35,26 +35,23 @@ class BestSellerItemBookInfo extends StatelessWidget {
             fontWeight: FontWeight.w500,
           ),
         ),
-        const SizedBox(
-          height: 5,
-        ),
+        // const SizedBox(height: 5),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text.rich(
               TextSpan(
-                text: '19.99',
-                children: [
-                  TextSpan(
-                      text: ' \$',
-                      style: TextStyles.textStyle16.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ))
-                ],
-                style: TextStyles.title
-              ),
+                  text: '19.99',
+                  children: [
+                    TextSpan(
+                        text: ' \$',
+                        style: TextStyles.textStyle16.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ))
+                  ],
+                  style: TextStyles.title),
             ),
-           const BookRating(),
+            const BookRating(),
           ],
         ),
       ],
