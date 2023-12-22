@@ -15,7 +15,6 @@ class MainApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: ThemeColors.scaffoldBackgroundColor),
       debugShowCheckedModeBanner: false,
       routerConfig: AppRouter.router,
-      // home: const SplashView(),
     );
   }
 }

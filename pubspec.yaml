@@ -28,6 +28,6 @@ fonts:
       - asset: assets/fonts/Montserrat-VariableFont_wght.ttf
       - asset: assets/fonts/Montserrat-Italic-VariableFont_wght.ttf
         style: italic
-  - family: GT Sectra Fine
+  - family: GTSectraFine
     fonts:
       - asset: assets/fonts/GT Sectra Fine Regular.ttf

@@ -27,7 +27,6 @@ class BestSellerItemBookInfo extends StatelessWidget {
             maxLines: 2,
           ),
         ),
-        // const SizedBox(height: 5),
         Text(
           'J.K. Rowling',
           style: TextStyles.textStyle14.copyWith(
@@ -35,7 +34,6 @@ class BestSellerItemBookInfo extends StatelessWidget {
             fontWeight: FontWeight.w500,
           ),
         ),
-        // const SizedBox(height: 5),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
