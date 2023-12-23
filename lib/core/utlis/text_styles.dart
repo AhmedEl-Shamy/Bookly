@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 class TextStyles {
   static const TextStyle title = TextStyle(
-    fontSize: 22,
-    fontWeight: FontWeight.bold,
+    fontSize: 30,
+    // fontWeight: FontWeight.bold,
     fontFamily: AssetsData.primaryFontFamily,
   );
 
@@ -23,6 +23,7 @@ class TextStyles {
     fontSize: 14,
     fontFamily: AssetsData.primaryFontFamily,
   );
+  
   static const TextStyle textStyle16 = TextStyle(
     fontSize: 14,
     fontFamily: AssetsData.primaryFontFamily,

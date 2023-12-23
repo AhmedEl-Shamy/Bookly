@@ -3,11 +3,12 @@ import 'package:bookly/core/utlis/colors.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MainApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(const BooklyApp());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class BooklyApp extends StatelessWidget {
+  const BooklyApp({super.key});
 
   @override
   Widget build(BuildContext context) {

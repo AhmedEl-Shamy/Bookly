@@ -4,7 +4,6 @@ import 'package:bookly/features/home/presentation/views/widgets/book_image.dart'
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-
 class BestSellerItem extends StatelessWidget {
   const BestSellerItem({
     super.key,
@@ -13,7 +12,7 @@ class BestSellerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         GoRouter.of(context).push(AppRouter.bookDetails);
       },
       child: const Padding(
@@ -23,7 +22,10 @@ class BestSellerItem extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              BookImage(aspectRatio: 70/105, height: 125,),
+              BookImage(
+                aspectRatio: 70 / 105,
+                height: 125,
+              ),
               SizedBox(
                 width: 30,
               ),
@@ -37,4 +39,3 @@ class BestSellerItem extends StatelessWidget {
     );
   }
 }
-

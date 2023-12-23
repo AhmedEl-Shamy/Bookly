@@ -1,4 +1,4 @@
-import 'package:bookly/features/home/presentation/views/widgets/best_seller_item_rating.dart';
+import 'package:bookly/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utlis/assets.dart';
@@ -21,8 +21,9 @@ class BestSellerItemBookInfo extends StatelessWidget {
           width: SizeConfig.widthBlock * 48,
           child: Text(
             'Harry Potter and the Goblet of Fire',
-            style: TextStyles.textStyle18
-                .copyWith(fontFamily: AssetsData.gTSectraFineFamily),
+            style: TextStyles.textStyle18.copyWith(
+              fontFamily: AssetsData.gTSectraFineFamily,
+            ),
             overflow: TextOverflow.ellipsis,
             maxLines: 2,
           ),
@@ -39,15 +40,18 @@ class BestSellerItemBookInfo extends StatelessWidget {
           children: [
             Text.rich(
               TextSpan(
-                  text: '19.99',
-                  children: [
-                    TextSpan(
-                        text: ' \$',
-                        style: TextStyles.textStyle16.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ))
-                  ],
-                  style: TextStyles.title),
+                text: '19.99',
+                children: [
+                  TextSpan(
+                      text: ' \$',
+                      style: TextStyles.textStyle16.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ))
+                ],
+                style: TextStyles.title.copyWith(
+                  fontWeight: FontWeight.w900,
+                ),
+              ),
             ),
             const BookRating(),
           ],
