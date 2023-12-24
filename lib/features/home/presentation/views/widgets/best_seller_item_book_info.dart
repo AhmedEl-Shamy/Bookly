@@ -1,10 +1,10 @@
-import 'package:bookly/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utlis/assets.dart';
 import '../../../../../core/utlis/colors.dart';
 import '../../../../../core/utlis/size_config.dart';
 import '../../../../../core/utlis/text_styles.dart';
+import 'best_seller_item_price.dart';
 
 class BestSellerItemBookInfo extends StatelessWidget {
   const BestSellerItemBookInfo({
@@ -35,28 +35,10 @@ class BestSellerItemBookInfo extends StatelessWidget {
             fontWeight: FontWeight.w500,
           ),
         ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text.rich(
-              TextSpan(
-                text: '19.99',
-                children: [
-                  TextSpan(
-                      text: ' \$',
-                      style: TextStyles.textStyle16.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ))
-                ],
-                style: TextStyles.title.copyWith(
-                  fontWeight: FontWeight.w900,
-                ),
-              ),
-            ),
-            const BookRating(),
-          ],
-        ),
+        const BestSellerItemPrice(),
       ],
     );
   }
 }
+
+

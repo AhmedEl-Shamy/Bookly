@@ -14,6 +14,8 @@ class BookDetailsInfo extends StatelessWidget {
       children: [
         Text(
           'The Jungle Book',
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
           style: TextStyles.title.copyWith(
             fontFamily: AssetsData.gTSectraFineFamily,
           ),
@@ -36,3 +38,7 @@ class BookDetailsInfo extends StatelessWidget {
     );
   }
 }
+
+
+
+
