@@ -16,7 +16,7 @@ class BestSellerItem extends StatelessWidget {
         GoRouter.of(context).push(AppRouter.bookDetails);
       },
       child: const Padding(
-        padding: EdgeInsets.only(top: 20),
+        padding: EdgeInsets.only(top: 20, left: 20, right: 20),
         child: SizedBox(
           height: 125,
           child: Row(
