@@ -26,10 +26,13 @@ class HomeViewBody extends StatelessWidget {
                   height: SizeConfig.heightBlock * 25,
                   child: const FeaturedListView(),
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.only(
-                      left: 20, top: SizeConfig.heightBlock * 6),
-                  child: const Text(
+                    left: 20,
+                    top: 30,
+                    bottom: 20,
+                  ),
+                  child: Text(
                     'Best Seller',
                     style: TextStyles.titleMedium,
                   ),

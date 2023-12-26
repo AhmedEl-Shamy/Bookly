@@ -15,25 +15,22 @@ class BookItem extends StatelessWidget {
       onTap: () {
         GoRouter.of(context).push(AppRouter.bookDetails);
       },
-      child: const Padding(
-        padding: EdgeInsets.only(top: 20, left: 20, right: 20),
-        child: SizedBox(
-          height: 125,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              BookImage(
-                aspectRatio: 70 / 105,
-                height: 125,
-              ),
-              SizedBox(
-                width: 30,
-              ),
-              Expanded(
-                child: BestSellerItemBookInfo(),
-              ),
-            ],
-          ),
+      child: const SizedBox(
+        height: 125,
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            BookImage(
+              aspectRatio: 70 / 105,
+              height: 125,
+            ),
+            SizedBox(
+              width: 30,
+            ),
+            Expanded(
+              child: BestSellerItemBookInfo(),
+            ),
+          ],
         ),
       ),
     );
