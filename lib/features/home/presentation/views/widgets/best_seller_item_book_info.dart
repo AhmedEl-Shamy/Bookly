@@ -40,5 +40,3 @@ class BestSellerItemBookInfo extends StatelessWidget {
     );
   }
 }
-
-

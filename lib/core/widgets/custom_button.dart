@@ -20,7 +20,7 @@ class CustomButton extends StatelessWidget {
     return SizedBox(
       height: 50,
       child: FilledButton(
-          onPressed: onPressed?? () {},
+          onPressed: onPressed ?? () {},
           style: FilledButton.styleFrom(
             foregroundColor: foregroundColor,
             backgroundColor: backgroundColor,

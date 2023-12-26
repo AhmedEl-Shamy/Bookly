@@ -44,7 +44,9 @@ class BookActions extends StatelessWidget {
             child: CustomButton(
               backgroundColor: ThemeColors.previewButtonColor,
               foregroundColor: Colors.white,
-              borderRadius: const BorderRadius.horizontal(right: Radius.circular(15),),
+              borderRadius: const BorderRadius.horizontal(
+                right: Radius.circular(15),
+              ),
               child: Text(
                 'Free Preview',
                 style: TextStyles.textStyle18.copyWith(

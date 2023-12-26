@@ -23,7 +23,7 @@ class TextStyles {
     fontSize: 14,
     fontFamily: AssetsData.primaryFontFamily,
   );
-  
+
   static const TextStyle textStyle16 = TextStyle(
     fontSize: 14,
     fontFamily: AssetsData.primaryFontFamily,

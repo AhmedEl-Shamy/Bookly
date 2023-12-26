@@ -13,7 +13,8 @@ class BooklyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: ThemeColors.scaffoldBackgroundColor),
+      theme: ThemeData.dark().copyWith(
+          scaffoldBackgroundColor: ThemeColors.scaffoldBackgroundColor),
       debugShowCheckedModeBanner: false,
       routerConfig: AppRouter.router,
     );

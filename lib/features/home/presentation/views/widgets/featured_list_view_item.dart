@@ -11,22 +11,21 @@ class FeaturedListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left:15),
+      padding: const EdgeInsets.only(left: 15),
       child: BookImage(
-        aspectRatio: 150/224,
+        aspectRatio: 150 / 224,
         height: SizeConfig.heightBlock * 25,
         child: SizedBox(
-            width: 45,
-            height: 45,
-            child: ClipOval(
-              child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 7.5, sigmaY: 7.5),
-                child: const Icon(Icons.play_arrow),
-              ),
+          width: 45,
+          height: 45,
+          child: ClipOval(
+            child: BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 7.5, sigmaY: 7.5),
+              child: const Icon(Icons.play_arrow),
             ),
           ),
+        ),
       ),
     );
   }
 }
-
