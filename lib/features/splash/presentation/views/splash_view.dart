@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:bookly/features/splash/presentaion/views/widgets/splash_body.dart';
+import 'package:bookly/features/splash/presentation/views/widgets/splash_body.dart';
 
 import '../../../../core/utlis/size_config.dart';
 

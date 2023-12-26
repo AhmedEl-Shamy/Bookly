@@ -4,8 +4,8 @@ import 'package:bookly/features/home/presentation/views/widgets/book_image.dart'
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class BestSellerItem extends StatelessWidget {
-  const BestSellerItem({
+class BookItem extends StatelessWidget {
+  const BookItem({
     super.key,
   });
 
