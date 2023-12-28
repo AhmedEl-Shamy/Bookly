@@ -32,6 +32,7 @@ class RecomendationList extends StatelessWidget {
             itemBuilder: (context, index) => const Padding(
               padding: EdgeInsets.only(left: 10),
               child: BookImage(
+                imageUrl: 'https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-tf-2-a-million-to-one.jpg',
                 aspectRatio: 70 / 112,
                 height: 112,
               ),

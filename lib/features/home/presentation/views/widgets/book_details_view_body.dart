@@ -19,7 +19,10 @@ class BookDetailsViewBody extends StatelessWidget {
           Padding(
             padding:
                 EdgeInsets.symmetric(horizontal: SizeConfig.widthBlock * 20),
-            child: const BookImage(aspectRatio: 162 / 243),
+            child: const BookImage(
+              aspectRatio: 162 / 243,
+              imageUrl: 'https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-tf-2-a-million-to-one.jpg',
+            ),
           ),
           const BookDetailsInfo(),
           const BookActions(),

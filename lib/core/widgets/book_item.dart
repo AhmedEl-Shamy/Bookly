@@ -21,6 +21,7 @@ class BookItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             BookImage(
+              imageUrl: 'https://www.designforwriters.com/wp-content/uploads/2017/10/design-for-writers-book-cover-tf-2-a-million-to-one.jpg',
               aspectRatio: 70 / 105,
               height: 125,
             ),
