@@ -22,13 +22,14 @@ class FeaturedListView extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) => Padding(
                 padding: const EdgeInsets.all(5),
-                child: FeaturedListViewItem(state.books[index].volumeInfo!.imageLinks!.thumbnail!),
+                child: FeaturedListViewItem(
+                  state.books[index].volumeInfo!.imageLinks?.thumbnail! ?? '',
+                ),
               ),
             );
-          }else if (state is FeaturedBooksFailed){
+          } else if (state is FeaturedBooksFailed) {
             return CustomErrorWidget(state.failure.errorMsg);
-          }
-          else{
+          } else {
             return const CustomProgressIndicator();
           }
         },

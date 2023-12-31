@@ -16,9 +16,8 @@ class BookDetailsInfo extends StatelessWidget {
       children: [
         Text(
           book.volumeInfo!.title!,
-          maxLines: 2,
-          overflow: TextOverflow.ellipsis,
-          style: TextStyles.title.copyWith(
+          textAlign: TextAlign.center,
+          style: TextStyles.titleMedium.copyWith(
             fontFamily: AssetsData.gTSectraFineFamily,
           ),
         ),
@@ -27,7 +26,8 @@ class BookDetailsInfo extends StatelessWidget {
         ),
         Text(
           book.volumeInfo!.authors!.join(' | '),
-          style: TextStyles.textStyle18.copyWith(
+          textAlign: TextAlign.center,
+          style: TextStyles.textStyle16.copyWith(
             fontWeight: FontWeight.w600,
             color: ThemeColors.secondaryTextColor,
           ),

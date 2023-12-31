@@ -25,7 +25,7 @@ class BookItem extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(12),
               child: BookImage(
-                imageUrl: book.volumeInfo!.imageLinks!.thumbnail!,
+                imageUrl: book.volumeInfo!.imageLinks?.thumbnail! ?? '',
                 aspectRatio: 70 / 105,
                 height: 125,
               ),

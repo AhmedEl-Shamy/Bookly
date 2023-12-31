@@ -6,7 +6,7 @@ import 'package:bookly/features/home/presentation/views/widgets/book_image.dart'
 import 'package:flutter/material.dart';
 
 import 'book_actions.dart';
-import 'recomendation_list.dart';
+import 'recomendation_list_widget.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody(this.book, {super.key});
@@ -23,17 +23,32 @@ class BookDetailsViewBody extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const BookDetailsAppbar(),
+                const SizedBox(
+                  height: 30,
+                ),
                 Padding(
                   padding: EdgeInsets.symmetric(
                       horizontal: SizeConfig.widthBlock * 20),
-                  child: BookImage(
-                    aspectRatio: 162 / 243,
-                    imageUrl: book.volumeInfo!.imageLinks!.thumbnail!,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(16),
+                    child: BookImage(
+                      aspectRatio: 162 / 243,
+                      imageUrl: book.volumeInfo!.imageLinks?.thumbnail! ?? '',
+                    ),
                   ),
                 ),
-                 BookDetailsInfo(book),
+                const SizedBox(
+                  height: 30,
+                ),
+                BookDetailsInfo(book),
+                const SizedBox(
+                  height: 30,
+                ),
                 const BookActions(),
-                const RecomendationList(),
+                const SizedBox(
+                  height: 30,
+                ),
+                const RecomendationListWidget(),
               ],
             ),
           ),
