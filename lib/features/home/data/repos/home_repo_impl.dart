@@ -52,4 +52,25 @@ class HomeRepoImpl extends HomeRepo {
       return Either(error: ServerFailure(e.toString()));
     }
   }
+  
+  @override
+  Future<Either<Failure, List<BookModel>>> fetchRecomendationBooks({required String category}) async {
+    try {
+      Map<String, dynamic> data = await _apiService.get(
+        endPoint: '/volumes?Filtering=free-ebooks&Sorting=relevance&q=subject:$category',
+      );
+      List<BookModel> books = List.empty(growable: true);
+      for (var item in data['items']) {
+        books.add(BookModel.fromJson(item));
+      }
+      return Either(data: books);
+    } on Exception catch (e) {
+      if (e is DioException) {
+        return Either(
+          error: ServerFailure.fromDioException(e),
+        );
+      }
+      return Either(error: ServerFailure(e.toString()));
+    }
+  }
 }
