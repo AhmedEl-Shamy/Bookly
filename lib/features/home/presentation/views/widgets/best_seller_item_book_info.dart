@@ -1,3 +1,4 @@
+import 'package:bookly/features/home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utlis/assets.dart';
@@ -7,10 +8,10 @@ import '../../../../../core/utlis/text_styles.dart';
 import 'best_seller_item_price.dart';
 
 class BestSellerItemBookInfo extends StatelessWidget {
-  const BestSellerItemBookInfo({
+  const BestSellerItemBookInfo(this.book,{
     super.key,
   });
-
+  final BookModel book;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -20,7 +21,7 @@ class BestSellerItemBookInfo extends StatelessWidget {
         SizedBox(
           width: SizeConfig.widthBlock * 48,
           child: Text(
-            'Harry Potter and the Goblet of Fire',
+            book.volumeInfo!.title!,
             style: TextStyles.textStyle18.copyWith(
               fontFamily: AssetsData.gTSectraFineFamily,
             ),
@@ -29,7 +30,9 @@ class BestSellerItemBookInfo extends StatelessWidget {
           ),
         ),
         Text(
-          'J.K. Rowling',
+          book.volumeInfo!.authors!.join(' | '),
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
           style: TextStyles.textStyle14.copyWith(
             color: ThemeColors.secondaryTextColor,
             fontWeight: FontWeight.w500,

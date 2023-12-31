@@ -33,7 +33,7 @@ class HomeViewBody extends StatelessWidget {
                     bottom: 20,
                   ),
                   child: Text(
-                    'Best Seller',
+                    'Newest Books',
                     style: TextStyles.titleMedium,
                   ),
                 ),

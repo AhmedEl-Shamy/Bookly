@@ -9,9 +9,10 @@ class SearchResultsList extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       padding: EdgeInsets.zero,
-      itemBuilder: (context, index) => const Padding(
-        padding: EdgeInsets.only(bottom: 20),
-        child: BookItem(),
+      itemBuilder: (context, index) => Padding(
+        padding: const EdgeInsets.only(bottom: 20),
+        // child: BookItem(),
+        child: Container(),
       ),
       itemCount: 20,
     );

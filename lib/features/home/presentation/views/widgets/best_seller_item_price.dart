@@ -13,19 +13,10 @@ class BestSellerItemPrice extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text.rich(
-          TextSpan(
-            text: '19.99',
-            children: [
-              TextSpan(
-                  text: ' \$',
-                  style: TextStyles.textStyle16.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ))
-            ],
-            style: TextStyles.titleMedium.copyWith(
-              fontWeight: FontWeight.bold,
-            ),
+        Text(
+          'Free',
+          style: TextStyles.titleMedium.copyWith(
+            fontWeight: FontWeight.bold,
           ),
         ),
         const BookRating(),

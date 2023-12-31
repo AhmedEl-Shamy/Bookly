@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/utlis/text_styles.dart';
 import 'custom_search_text_field.dart';
+import 'search_results_list.dart';
 
 class SearchViewBody extends StatelessWidget {
   const SearchViewBody({super.key});
@@ -35,22 +36,6 @@ class SearchViewBody extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class SearchResultsList extends StatelessWidget {
-  const SearchResultsList({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      padding: EdgeInsets.zero,
-      itemBuilder: (context, index) => const Padding(
-        padding: EdgeInsets.only(bottom: 20),
-        child: BookItem(),
-      ),
-      itemCount: 20,
     );
   }
 }

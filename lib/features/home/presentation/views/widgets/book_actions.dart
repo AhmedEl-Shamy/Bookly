@@ -8,7 +8,6 @@ class BookActions extends StatelessWidget {
   const BookActions({
     super.key,
   });
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -17,28 +16,17 @@ class BookActions extends StatelessWidget {
         children: [
           Expanded(
             child: CustomButton(
-              backgroundColor: Colors.white,
-              foregroundColor: Colors.black,
-              borderRadius: const BorderRadius.horizontal(
-                left: Radius.circular(15),
-              ),
-              child: Text.rich(
-                TextSpan(
-                  text: '19.99',
-                  children: [
-                    TextSpan(
-                      text: ' \$',
-                      style: TextStyles.textStyle16.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    )
-                  ],
+                backgroundColor: Colors.white,
+                foregroundColor: Colors.black,
+                borderRadius: const BorderRadius.horizontal(
+                  left: Radius.circular(15),
+                ),
+                child: Text(
+                  'Free',
                   style: TextStyles.textStyle18.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
-                ),
-              ),
-            ),
+                )),
           ),
           Expanded(
             child: CustomButton(
