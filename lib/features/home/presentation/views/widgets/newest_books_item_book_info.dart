@@ -5,7 +5,7 @@ import '../../../../../core/utlis/assets.dart';
 import '../../../../../core/utlis/colors.dart';
 import '../../../../../core/utlis/size_config.dart';
 import '../../../../../core/utlis/text_styles.dart';
-import 'best_seller_item_price.dart';
+import 'newest_books_item_price.dart';
 
 class BestSellerItemBookInfo extends StatelessWidget {
   const BestSellerItemBookInfo(this.book,{

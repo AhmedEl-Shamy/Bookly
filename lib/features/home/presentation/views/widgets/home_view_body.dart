@@ -4,7 +4,7 @@ import 'package:bookly/features/home/presentation/views/widgets/featured_list_vi
 import 'package:bookly/features/home/presentation/views/widgets/home_view_appbar.dart';
 import 'package:flutter/material.dart';
 
-import 'best_seller_list_sliver.dart';
+import 'newest_books_list_sliver.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
