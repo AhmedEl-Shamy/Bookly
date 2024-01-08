@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utlis/text_styles.dart';
 import 'custom_search_text_field.dart';
-import 'search_results_list.dart';
+import 'search_results.dart';
 
 class SearchViewBody extends StatelessWidget {
   const SearchViewBody({super.key});
@@ -22,19 +21,11 @@ class SearchViewBody extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-            Text(
-              'Search Results',
-              style: TextStyles.titleMedium,
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Expanded(
-              child: SearchResultsList(),
-            ),
+            Expanded(child: SearchResults()),
           ],
         ),
       ),
     );
   }
 }
+
