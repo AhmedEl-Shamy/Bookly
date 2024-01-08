@@ -1,4 +1,3 @@
-import 'package:bookly/core/widgets/book_item.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utlis/text_styles.dart';

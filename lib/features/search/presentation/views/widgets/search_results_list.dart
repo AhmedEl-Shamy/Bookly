@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/widgets/book_item.dart';
-
 class SearchResultsList extends StatelessWidget {
   const SearchResultsList({super.key});
 

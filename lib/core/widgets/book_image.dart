@@ -41,19 +41,4 @@ class BookImage extends StatelessWidget {
       ),
     );
   }
-
-  Container newMethod() {
-    return Container(
-      padding: const EdgeInsets.all(10),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
-        image: const DecorationImage(
-          fit: BoxFit.fill,
-          image: AssetImage(AssetsData.book),
-        ),
-      ),
-      alignment: AlignmentDirectional.bottomEnd,
-      child: child,
-    );
-  }
 }

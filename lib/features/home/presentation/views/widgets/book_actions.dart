@@ -16,17 +16,19 @@ class BookActions extends StatelessWidget {
         children: [
           Expanded(
             child: CustomButton(
-                backgroundColor: Colors.white,
-                foregroundColor: Colors.black,
-                borderRadius: const BorderRadius.horizontal(
-                  left: Radius.circular(15),
+              backgroundColor: Colors.white,
+              foregroundColor: Colors.black,
+              borderRadius: const BorderRadius.horizontal(
+                left: Radius.circular(15),
+              ),
+              onPressed: (){},
+              child: Text(
+                'Free',
+                style: TextStyles.textStyle18.copyWith(
+                  fontWeight: FontWeight.bold,
                 ),
-                child: Text(
-                  'Free',
-                  style: TextStyles.textStyle18.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
-                )),
+              ),
+            ),
           ),
           Expanded(
             child: CustomButton(
