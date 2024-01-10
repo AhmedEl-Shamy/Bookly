@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utlis/text_styles.dart';
-import 'book_rating.dart';
+import '../utlis/text_styles.dart';
+import '../../features/home/presentation/views/widgets/book_rating.dart';
 
-class BestSellerItemPrice extends StatelessWidget {
-  const BestSellerItemPrice({
+class NewestBooksItemPrice extends StatelessWidget {
+  const NewestBooksItemPrice({
     super.key,
   });
 

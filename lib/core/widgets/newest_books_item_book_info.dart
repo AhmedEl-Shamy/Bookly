@@ -1,14 +1,14 @@
 import 'package:bookly/core/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utlis/assets.dart';
-import '../../../../../core/utlis/colors.dart';
-import '../../../../../core/utlis/size_config.dart';
-import '../../../../../core/utlis/text_styles.dart';
+import '../utlis/assets.dart';
+import '../utlis/colors.dart';
+import '../utlis/size_config.dart';
+import '../utlis/text_styles.dart';
 import 'newest_books_item_price.dart';
 
-class BestSellerItemBookInfo extends StatelessWidget {
-  const BestSellerItemBookInfo(this.book,{
+class NewestBooksItemBookInfo extends StatelessWidget {
+  const NewestBooksItemBookInfo(this.book,{
     super.key,
   });
   final BookModel book;
@@ -38,7 +38,7 @@ class BestSellerItemBookInfo extends StatelessWidget {
             fontWeight: FontWeight.w500,
           ),
         ),
-        const BestSellerItemPrice(),
+        const NewestBooksItemPrice(),
       ],
     );
   }

@@ -1,5 +1,6 @@
 import 'package:bookly/core/widgets/custom_image_error.dart';
 import 'package:bookly/core/widgets/custom_progress_indicator.dart';
+import 'package:bookly/core/widgets/loading_widgets/book_image_loading.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
@@ -32,8 +33,9 @@ class BookImage extends StatelessWidget {
                   ? CachedNetworkImage(
                       imageUrl: imageUrl,
                       fit: BoxFit.fill,
-                      progressIndicatorBuilder: (context, url, progress) =>
-                          const CustomProgressIndicator(),
+                      // progressIndicatorBuilder: (context, url, progress) =>
+                      //     const CustomProgressIndicator(),
+                      progressIndicatorBuilder: (context, url, progress) => BookImageLoading(aspectRatio: aspectRatio),
                       errorWidget: (context, url, error) =>
                           const CustomImageError(),
                     )

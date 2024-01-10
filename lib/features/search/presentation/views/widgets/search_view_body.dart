@@ -21,11 +21,12 @@ class SearchViewBody extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-            Expanded(child: SearchResults()),
+            Expanded(
+              child: SearchResults(),
+            ),
           ],
         ),
       ),
     );
   }
 }
-

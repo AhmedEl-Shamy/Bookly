@@ -1,5 +1,6 @@
 import 'package:bookly/core/widgets/book_item.dart';
 import 'package:bookly/core/widgets/custom_progress_indicator.dart';
+import 'package:bookly/core/widgets/loading_widgets/book_item_loading.dart';
 import 'package:bookly/features/home/presentation/view_models/newest_books_cubit/newest_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -24,9 +25,19 @@ class BestSellerListSliver extends StatelessWidget {
             ),
           );
         }else {
-          return const SliverToBoxAdapter(
-            child: CustomProgressIndicator(),
+          // return const SliverToBoxAdapter(
+          //   child: CustomProgressIndicator(),
+          // );
+          return SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) => const Padding(
+                padding: EdgeInsets.only(bottom: 20, left: 20, right: 20),
+                child: BookItemLoading(),
+              ),
+              childCount: 15,
+            ),
           );
+
         }
       },
     );

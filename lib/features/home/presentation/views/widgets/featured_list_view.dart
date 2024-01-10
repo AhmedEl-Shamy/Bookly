@@ -1,5 +1,6 @@
 import 'package:bookly/core/widgets/custom_error_widget.dart';
 import 'package:bookly/core/widgets/custom_progress_indicator.dart';
+import 'package:bookly/core/widgets/loading_widgets/featured_books_list_loading.dart';
 import 'package:bookly/features/home/presentation/view_models/featured_books_cubit/featured_books_cubit.dart';
 import 'package:bookly/features/home/presentation/views/widgets/featured_list_view_item.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +31,8 @@ class FeaturedListView extends StatelessWidget {
           } else if (state is FeaturedBooksFailed) {
             return CustomErrorWidget(state.failure.errorMsg);
           } else {
-            return const CustomProgressIndicator();
+            // return const CustomProgressIndicator();
+            return const FeaturedBooksListLoading();
           }
         },
       ),
