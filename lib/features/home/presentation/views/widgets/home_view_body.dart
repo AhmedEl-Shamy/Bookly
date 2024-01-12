@@ -1,6 +1,5 @@
 import 'package:bookly/core/utlis/size_config.dart';
 import 'package:bookly/core/utlis/text_styles.dart';
-import 'package:bookly/core/widgets/loading_widgets/skelton.dart';
 import 'package:bookly/features/home/presentation/views/widgets/featured_list_view.dart';
 import 'package:bookly/features/home/presentation/views/widgets/home_view_appbar.dart';
 import 'package:flutter/material.dart';

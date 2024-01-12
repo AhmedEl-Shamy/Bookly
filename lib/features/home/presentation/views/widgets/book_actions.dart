@@ -60,7 +60,7 @@ class BookActions extends StatelessWidget {
                   }
                 },
                 child: Text(
-                  'Free Preview',
+                  'Preview',
                   style: TextStyles.textStyle18.copyWith(
                     fontFamily:
                         Theme.of(context).textTheme.bodyLarge!.fontFamily,

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/widgets/custom_error_widget.dart';
-import '../../../../../core/widgets/custom_progress_indicator.dart';
 import '../../view_models/cubit/recomendation_books_cubit.dart';
 import 'recomendation_list_item.dart';
 

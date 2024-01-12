@@ -1,6 +1,5 @@
 import 'package:bookly/core/widgets/custom_error_widget.dart';
-import 'package:bookly/core/widgets/custom_progress_indicator.dart';
-import 'package:bookly/core/widgets/loading_widgets/book_item_list_Loading.dart';
+import 'package:bookly/core/widgets/loading_widgets/book_item_list_loading.dart';
 import 'package:bookly/features/search/presentation/view_models/search_cubit/search_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

@@ -12,6 +12,8 @@ class CustomSearchTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       controller: BlocProvider.of<SearchCubit>(context).controller,
+      keyboardType: TextInputType.text,
+      onSubmitted: (value) => BlocProvider.of<SearchCubit>(context).fetchSearchData(),
       decoration: InputDecoration(
         enabledBorder: customTextFieldBorder(),
         focusedBorder: customTextFieldBorder(),

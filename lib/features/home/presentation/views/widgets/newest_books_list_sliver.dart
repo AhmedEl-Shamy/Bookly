@@ -1,5 +1,5 @@
 import 'package:bookly/core/widgets/book_item.dart';
-import 'package:bookly/core/widgets/custom_progress_indicator.dart';
+import 'package:bookly/core/widgets/custom_error_widget.dart';
 import 'package:bookly/core/widgets/loading_widgets/book_item_loading.dart';
 import 'package:bookly/features/home/presentation/view_models/newest_books_cubit/newest_books_cubit.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +14,7 @@ class BestSellerListSliver extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<NewestBooksCubit, NewestBooksState>(
       builder: (context, state) {
-        if (state is NewestBooksSuccess){
+        if (state is NewestBooksSuccess) {
           return SliverList(
             delegate: SliverChildBuilderDelegate(
               (context, index) => Padding(
@@ -24,10 +24,11 @@ class BestSellerListSliver extends StatelessWidget {
               childCount: state.books.length,
             ),
           );
-        }else {
-          // return const SliverToBoxAdapter(
-          //   child: CustomProgressIndicator(),
-          // );
+        } else if (state is NewestBooksFailed) {
+          return SliverFillRemaining(
+            child: CustomErrorWidget(state.failure.errorMsg),
+          );
+        } else {
           return SliverList(
             delegate: SliverChildBuilderDelegate(
               (context, index) => const Padding(
@@ -37,7 +38,6 @@ class BestSellerListSliver extends StatelessWidget {
               childCount: 15,
             ),
           );
-
         }
       },
     );
