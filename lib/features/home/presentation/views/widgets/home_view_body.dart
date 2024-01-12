@@ -1,8 +1,11 @@
 import 'package:bookly/core/utlis/size_config.dart';
 import 'package:bookly/core/utlis/text_styles.dart';
+import 'package:bookly/features/home/presentation/view_models/featured_books_cubit/featured_books_cubit.dart';
+import 'package:bookly/features/home/presentation/view_models/newest_books_cubit/newest_books_cubit.dart';
 import 'package:bookly/features/home/presentation/views/widgets/featured_list_view.dart';
 import 'package:bookly/features/home/presentation/views/widgets/home_view_appbar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'newest_books_list_sliver.dart';
 
@@ -12,37 +15,46 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: CustomScrollView(
-        slivers: [
-          SliverToBoxAdapter(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const HomeAppbar(),
-                const SizedBox(
-                  height: 30,
-                ),
-                SizedBox(
-                  height: SizeConfig.heightBlock * 25,
-                  child: const FeaturedListView(),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(
-                    left: 20,
-                    top: 30,
-                    bottom: 20,
+      child: RefreshIndicator(
+        onRefresh: () => _refresh(context),
+        child: CustomScrollView(
+          slivers: [
+            const CustomHomeAppbar(),
+            SliverToBoxAdapter(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const SizedBox(
+                    height: 30,
                   ),
-                  child: Text(
-                    'Newest Books',
-                    style: TextStyles.titleMedium,
+                  SizedBox(
+                    height: SizeConfig.heightBlock * 25,
+                    child: const FeaturedListView(),
                   ),
-                ),
-              ],
+                  const Padding(
+                    padding: EdgeInsets.only(
+                      left: 20,
+                      top: 30,
+                      bottom: 20,
+                    ),
+                    child: Text(
+                      'Newest Books',
+                      style: TextStyles.titleMedium,
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-          const BestSellerListSliver()
-        ],
+            const BestSellerListSliver()
+          ],
+        ),
       ),
     );
   }
+
+  Future<void> _refresh(BuildContext context) async {
+    BlocProvider.of<FeaturedBooksCubit>(context).getFeaturedBooks();
+    BlocProvider.of<NewestBooksCubit>(context).getNewestBooks();
+  }
 }
+

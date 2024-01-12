@@ -18,38 +18,41 @@ class BookDetailsViewBody extends StatelessWidget {
     return SafeArea(
       child: CustomScrollView(
         slivers: [
+          const BookDetailsAppbar(),
           SliverToBoxAdapter(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const BookDetailsAppbar(),
-                const SizedBox(
-                  height: 30,
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: SizeConfig.widthBlock * 20),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(16),
-                    child: BookImage(
-                      aspectRatio: 162 / 243,
-                      imageUrl: book.volumeInfo!.imageLinks?.thumbnail! ?? '',
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: SizeConfig.widthBlock * 20),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(16),
+                      child: BookImage(
+                        aspectRatio: 162 / 243,
+                        imageUrl: book.volumeInfo!.imageLinks?.thumbnail! ?? '',
+                      ),
                     ),
                   ),
-                ),
-                const SizedBox(
-                  height: 30,
-                ),
-                BookDetailsInfo(book),
-                const SizedBox(
-                  height: 30,
-                ),
-                BookActions(book),
-                const SizedBox(
-                  height: 30,
-                ),
-                const RecomendationListWidget(),
-              ],
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  BookDetailsInfo(book),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  BookActions(book),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  const RecomendationListWidget(),
+                ],
+              ),
             ),
           ),
         ],

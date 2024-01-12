@@ -3,31 +3,36 @@ import 'package:bookly/core/utlis/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class HomeAppbar extends StatelessWidget {
-  const HomeAppbar({super.key});
+import '../../../../../core/utlis/colors.dart';
+
+class CustomHomeAppbar extends StatelessWidget {
+  const CustomHomeAppbar({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Image.asset(
-            AssetsData.logo,
-            height: 20,
-          ),
-          IconButton(
-            onPressed: () {
-              GoRouter.of(context).push(AppRouter.searchView);
-            },
-            icon: Image.asset(
-              AssetsData.searchIcon,
-              height: 27,
-            ),
-          )
-        ],
+    return SliverAppBar(
+      backgroundColor: ThemeColors.scaffoldBackgroundColor,
+      titleSpacing: 20,
+      pinned: true,
+      elevation: 2,
+      title: Image.asset(
+        AssetsData.logo,
+        height: 20,
       ),
+      actions: [
+        IconButton(
+          onPressed: () {
+            GoRouter.of(context).push(AppRouter.searchView);
+          },
+          icon: Image.asset(
+            AssetsData.searchIcon,
+            height: 27,
+          ),
+        ),
+        const SizedBox(width: 20,)
+      ],
     );
   }
 }
