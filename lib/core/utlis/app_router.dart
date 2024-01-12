@@ -62,8 +62,8 @@ class AppRouter {
       child: child,
       transitionDuration: DurationsData.primaryAnimationDuration,
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
-        return ScaleTransition(
-          scale: CurvedAnimation(
+        return FadeTransition(
+          opacity: CurvedAnimation(
             parent: animation,
             curve: Curves.easeIn,
           ),
