@@ -22,7 +22,7 @@ class CustomErrorWidget extends StatelessWidget {
         ),
         CustomButton(
           backgroundColor: Colors.white,
-          foregroundColor: Theme.of(context).colorScheme.background,
+          foregroundColor: Theme.of(context).colorScheme.surface,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             mainAxisSize: MainAxisSize.min,
