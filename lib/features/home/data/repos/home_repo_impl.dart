@@ -1,4 +1,4 @@
-import 'package:bookly/core/utlis/api_service.dart';
+import 'package:bookly/core/services/api_service.dart';
 import 'package:bookly/core/utlis/either_type.dart';
 
 import 'package:bookly/core/utlis/failure.dart';

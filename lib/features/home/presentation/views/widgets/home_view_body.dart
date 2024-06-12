@@ -1,4 +1,4 @@
-import 'package:bookly/core/utlis/size_config.dart';
+import 'package:bookly/config/size_config.dart';
 import 'package:bookly/core/utlis/text_styles.dart';
 import 'package:bookly/features/home/presentation/view_models/featured_books_cubit/featured_books_cubit.dart';
 import 'package:bookly/features/home/presentation/view_models/newest_books_cubit/newest_books_cubit.dart';

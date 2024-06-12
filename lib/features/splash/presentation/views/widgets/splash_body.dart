@@ -1,4 +1,4 @@
-import 'package:bookly/core/utlis/app_router.dart';
+import 'package:bookly/config/app_router.dart';
 import 'package:bookly/core/utlis/durations.dart';
 import 'package:flutter/material.dart';
 import 'package:bookly/core/utlis/assets.dart';

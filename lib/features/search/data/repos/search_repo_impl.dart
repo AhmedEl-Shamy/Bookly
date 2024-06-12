@@ -1,7 +1,7 @@
 import 'package:bookly/core/models/book_model/book_model.dart';
 import 'package:dio/dio.dart';
 
-import '../../../../core/utlis/api_service.dart';
+import '../../../../core/services/api_service.dart';
 import '../../../../core/utlis/either_type.dart';
 import '../../../../core/utlis/failure.dart';
 import 'search_repo.dart';

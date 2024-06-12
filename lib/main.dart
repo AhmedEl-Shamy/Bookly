@@ -1,6 +1,6 @@
-import 'package:bookly/core/utlis/app_router.dart';
+import 'package:bookly/config/app_router.dart';
 import 'package:bookly/core/utlis/colors.dart';
-import 'package:bookly/core/utlis/services_config.dart';
+import 'package:bookly/config/services_config.dart';
 import 'package:bookly/features/home/presentation/view_models/featured_books_cubit/featured_books_cubit.dart';
 import 'package:bookly/features/home/presentation/view_models/newest_books_cubit/newest_books_cubit.dart';
 import 'package:flutter/material.dart';

@@ -1,4 +1,4 @@
-import 'package:bookly/core/utlis/services_config.dart';
+import 'package:bookly/config/services_config.dart';
 import 'package:bookly/features/search/presentation/view_models/search_cubit/search_cubit.dart';
 import 'package:bookly/features/search/presentation/views/widgets/search_view_body.dart';
 import 'package:flutter/material.dart';

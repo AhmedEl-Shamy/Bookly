@@ -1,5 +1,5 @@
 import 'package:bookly/core/utlis/durations.dart';
-import 'package:bookly/core/utlis/services_config.dart';
+import 'package:bookly/config/services_config.dart';
 import 'package:bookly/core/models/book_model/book_model.dart';
 import 'package:bookly/features/home/presentation/view_models/cubit/recomendation_books_cubit.dart';
 import 'package:bookly/features/home/presentation/views/home_view.dart';
@@ -9,7 +9,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../features/home/presentation/views/book_details_view.dart';
+import '../features/home/presentation/views/book_details_view.dart';
 
 class AppRouter {
   static const String homeViewRoute = '/homeView';

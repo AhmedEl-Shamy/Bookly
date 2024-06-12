@@ -1,4 +1,4 @@
-import 'package:bookly/core/utlis/size_config.dart';
+import 'package:bookly/config/size_config.dart';
 import 'package:bookly/core/models/book_model/book_model.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_details_appbar.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_details_info.dart';

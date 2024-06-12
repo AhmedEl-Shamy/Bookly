@@ -2,7 +2,7 @@ import 'package:bookly/core/widgets/loading_widgets/newest_books_item_price_load
 import 'package:bookly/core/widgets/loading_widgets/skelton.dart';
 import 'package:flutter/material.dart';
 
-import '../../utlis/size_config.dart';
+import '../../../config/size_config.dart';
 
 class NewestBooksItemBookInfoLoading extends StatelessWidget {
   const NewestBooksItemBookInfoLoading(

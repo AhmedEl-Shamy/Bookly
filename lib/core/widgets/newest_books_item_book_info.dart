@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../utlis/assets.dart';
 import '../utlis/colors.dart';
-import '../utlis/size_config.dart';
+import '../../config/size_config.dart';
 import '../utlis/text_styles.dart';
 import 'newest_books_item_price.dart';
 
