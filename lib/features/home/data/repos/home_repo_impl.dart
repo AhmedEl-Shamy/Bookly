@@ -6,7 +6,7 @@ import 'package:bookly/core/utlis/failure.dart';
 import 'package:bookly/core/models/book_model/book_model.dart';
 import 'package:dio/dio.dart';
 
-import 'home_repo.dart';
+import '../../domain/repositories/home_repo.dart';
 
 class HomeRepoImpl extends HomeRepo {
   final ApiService _apiService;

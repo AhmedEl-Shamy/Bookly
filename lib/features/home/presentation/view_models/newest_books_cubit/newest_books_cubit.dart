@@ -4,7 +4,7 @@ import 'package:bookly/core/models/book_model/book_model.dart';
 import 'package:equatable/equatable.dart';
 
 import '../../../../../core/utlis/either_type.dart';
-import '../../../data/repos/home_repo.dart';
+import '../../../domain/repositories/home_repo.dart';
 
 part 'newest_books_state.dart';
 
