@@ -1,6 +1,6 @@
 import 'package:bookly/core/utlis/durations.dart';
 import 'package:bookly/config/services_config.dart';
-import 'package:bookly/core/models/book_model/book_model.dart';
+import 'package:bookly/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly/features/home/presentation/view_models/cubit/recomendation_books_cubit.dart';
 import 'package:bookly/features/home/presentation/views/home_view.dart';
 import 'package:bookly/features/search/presentation/views/search_view.dart';

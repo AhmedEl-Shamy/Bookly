@@ -1,4 +1,4 @@
-import 'package:bookly/core/models/book_model/book_model.dart';
+import 'package:bookly/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly/core/utlis/either_type.dart';
 import 'package:bookly/core/utlis/failure.dart';
 

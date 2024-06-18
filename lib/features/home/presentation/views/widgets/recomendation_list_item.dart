@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../../config/app_router.dart';
-import '../../../../../core/models/book_model/book_model.dart';
+import '../../../data/models/book_model/book_model.dart';
 import '../../../../../core/widgets/book_image.dart';
 
 class RecomendationListItem extends StatelessWidget {

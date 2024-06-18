@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../../../core/models/book_model/book_model.dart';
+import '../../../data/models/book_model/book_model.dart';
 import '../../../../../core/utlis/colors.dart';
 import '../../../../../core/utlis/text_styles.dart';
 import '../../../../../core/widgets/custom_button.dart';

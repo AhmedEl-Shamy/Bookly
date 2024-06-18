@@ -1,6 +1,5 @@
-import 'package:equatable/equatable.dart';
 
-class ImageLinks extends Equatable {
+class ImageLinks{
   final String? smallThumbnail;
   final String? thumbnail;
 
@@ -15,7 +14,4 @@ class ImageLinks extends Equatable {
         'smallThumbnail': smallThumbnail,
         'thumbnail': thumbnail,
       };
-
-  @override
-  List<Object?> get props => [smallThumbnail, thumbnail];
 }

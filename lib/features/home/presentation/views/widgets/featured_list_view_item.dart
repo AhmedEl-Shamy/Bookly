@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import 'package:bookly/config/app_router.dart';
 import 'package:bookly/core/widgets/book_image.dart';
-import 'package:bookly/core/models/book_model/book_model.dart';
+import 'package:bookly/features/home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 

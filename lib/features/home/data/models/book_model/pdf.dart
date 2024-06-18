@@ -1,6 +1,4 @@
-import 'package:equatable/equatable.dart';
-
-class Pdf extends Equatable {
+class Pdf{
   final bool? isAvailable;
 
   const Pdf({this.isAvailable});
@@ -12,7 +10,4 @@ class Pdf extends Equatable {
   Map<String, dynamic> toJson() => {
         'isAvailable': isAvailable,
       };
-
-  @override
-  List<Object?> get props => [isAvailable];
 }
