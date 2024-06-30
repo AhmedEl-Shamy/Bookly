@@ -1,31 +1,37 @@
-import 'package:bookly/core/utlis/constans.dart';
-import 'package:hive/hive.dart';
+import 'package:bookly/core/services/db_service.dart';
 
 import '../../domain/entities/book_entity.dart';
 
 abstract class HomeLocalDataSource {
   List<BookEntity> fetchFeaturedBooks();
   List<BookEntity> fetchNewestBooks();
-  Future<void> cacheBooks({required List<BookEntity> books, required String boxName});
+  Future<void> cachFeaturedBooks(List<BookEntity> books);
+  Future<void> cachNewestBooks(List<BookEntity> books);
 }
 
 class HomeLocalDataSourceImpl extends HomeLocalDataSource {
+  final DBService<BookEntity> _dbService;
+
+  HomeLocalDataSourceImpl({required DBService<BookEntity> dbService})
+      : _dbService = dbService;
+
   @override
   List<BookEntity> fetchFeaturedBooks() {
-    Box box = Hive.box(Constans.hiveFeaturedBoxName);
-    return box.values.toList().cast<BookEntity>();
+    return _dbService.fetchAllBoxData(DBServiceImpl.hiveFeaturedBoxName);
   }
 
   @override
   List<BookEntity> fetchNewestBooks() {
-    Box box = Hive.box(Constans.hiveNewestBoxName);
-    return box.values.toList().cast<BookEntity>();
-  }
-  
-  @override
-  Future<void> cacheBooks({required List<BookEntity> books, required String boxName}) async {
-    Box box = Hive.box(boxName);
-    await box.addAll(books);
+    return _dbService.fetchAllBoxData(DBServiceImpl.hiveNewestBoxName);
   }
 
+  @override
+  Future<void> cachFeaturedBooks(List<BookEntity> books) async {
+    await _dbService.chacheListData(DBServiceImpl.hiveFeaturedBoxName, books);
+  }
+
+  @override
+  Future<void> cachNewestBooks(List<BookEntity> books) async {
+    await _dbService.chacheListData(DBServiceImpl.hiveNewestBoxName, books);
+  }
 }

@@ -13,10 +13,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   ServicesConfig.init();
-  await Hive.initFlutter();
-  Hive.registerAdapter(BookEntityAdapter());
-  await Hive.openBox(Constans.hiveFeaturedBoxName);
-  await Hive.openBox(Constans.hiveNewestBoxName);
+  
   runApp(const BooklyApp());
 }
 
