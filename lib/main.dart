@@ -1,14 +1,22 @@
 import 'package:bookly/config/app_router.dart';
 import 'package:bookly/core/utlis/colors.dart';
 import 'package:bookly/config/services_config.dart';
+import 'package:bookly/core/utlis/constans.dart';
+import 'package:bookly/features/home/domain/entities/book_entity_adapter.dart';
 import 'package:bookly/features/home/presentation/view_models/featured_books_cubit/featured_books_cubit.dart';
 import 'package:bookly/features/home/presentation/view_models/newest_books_cubit/newest_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main() {
+
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   ServicesConfig.init();
+  await Hive.initFlutter();
+  Hive.registerAdapter(BookEntityAdapter());
+  await Hive.openBox(Constans.hiveFeaturedBoxName);
+  await Hive.openBox(Constans.hiveNewestBoxName);
   runApp(const BooklyApp());
 }
 

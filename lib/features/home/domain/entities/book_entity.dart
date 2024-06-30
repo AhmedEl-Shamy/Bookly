@@ -3,8 +3,8 @@ class BookEntity {
   final String name;
   final String image;
   final List<String>? authors;
-  final num? rate;
-  final num? price;
+  final double? rate;
+  final double? price;
 
   BookEntity({
     required this.bookId,
