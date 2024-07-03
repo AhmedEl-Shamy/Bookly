@@ -5,10 +5,10 @@ import 'package:dartz/dartz.dart';
 import '../../../../core/usecases/usecase.dart';
 import '../entities/book_entity.dart';
 
-class FetchRecomendationBooksUseCase extends UseCase<List<BookEntity>>  {
+class FetchNewestBooksUseCase extends UseCase<List<BookEntity>>  {
   final HomeRepo _homeRepo;
 
-  FetchRecomendationBooksUseCase({
+  FetchNewestBooksUseCase({
     required HomeRepo homeRepo,
   }) : _homeRepo = homeRepo;
   
