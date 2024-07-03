@@ -1,5 +1,5 @@
 import 'package:bookly/core/utlis/failure.dart';
-import 'package:bookly/core/utlis/either_type.dart';
+import 'package:dartz/dartz.dart';
 
 import '../entities/book_entity.dart';
 

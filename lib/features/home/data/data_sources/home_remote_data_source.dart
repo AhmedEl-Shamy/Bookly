@@ -4,10 +4,9 @@ import 'package:bookly/features/home/domain/entities/book_entity.dart';
 import '../models/book_model/book_model.dart';
 
 abstract class HomeRemoteDataSource {
-  Future<List<BookEntity>> fetchFeaturedBooks(String endPoint);
-  Future<List<BookEntity>> fetchNewestBooks(String endPoint);
-  Future<List<BookEntity>> fetchRecomendationBooks(
-      String endPoint, String category);
+  Future<List<BookEntity>> fetchFeaturedBooks();
+  Future<List<BookEntity>> fetchNewestBooks();
+  Future<List<BookEntity>> fetchRecomendationBooks(String category);
 }
 
 class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
@@ -17,7 +16,7 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
       : _apiService = apiService;
 
   @override
-  Future<List<BookEntity>> fetchFeaturedBooks(String endPoint) async {
+  Future<List<BookEntity>> fetchFeaturedBooks() async {
     Map<String, dynamic> data = await _apiService.get(
       endPoint: '/volumes?Filtering=free-ebooks&q=programming',
     );
@@ -26,7 +25,7 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
   }
 
   @override
-  Future<List<BookEntity>> fetchNewestBooks(String endPoint) async {
+  Future<List<BookEntity>> fetchNewestBooks() async {
     Map<String, dynamic> data = await _apiService.get(
       endPoint: '/volumes?Filtering=free-ebooks&q=programming&Sorting=newest',
     );
@@ -36,8 +35,7 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
   }
 
   @override
-  Future<List<BookEntity>> fetchRecomendationBooks(
-      String endPoint, String category) async {
+  Future<List<BookEntity>> fetchRecomendationBooks(String category) async {
     Map<String, dynamic> data = await _apiService.get(
       endPoint:
           '/volumes?Filtering=free-ebooks&Sorting=relevance&q=subject:$category',

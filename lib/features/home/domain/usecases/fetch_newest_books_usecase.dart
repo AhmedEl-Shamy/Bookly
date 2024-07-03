@@ -1,6 +1,6 @@
-import 'package:bookly/core/utlis/either_type.dart';
 import 'package:bookly/core/utlis/failure.dart';
 import 'package:bookly/features/home/domain/repositories/home_repo.dart';
+import 'package:dartz/dartz.dart';
 
 import '../../../../core/usecases/usecase.dart';
 import '../entities/book_entity.dart';
