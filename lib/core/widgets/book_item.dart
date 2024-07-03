@@ -1,7 +1,7 @@
 import 'package:bookly/config/app_router.dart';
-import 'package:bookly/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly/core/widgets/newest_books_item_book_info.dart';
 import 'package:bookly/core/widgets/book_image.dart';
+import 'package:bookly/features/home/domain/entities/book_entity.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -10,7 +10,7 @@ class BookItem extends StatelessWidget {
     this.book, {
     super.key,
   });
-  final BookModel book;
+  final BookEntity book;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -25,7 +25,7 @@ class BookItem extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(12),
               child: BookImage(
-                imageUrl: book.volumeInfo!.imageLinks?.thumbnail! ?? '',
+                imageUrl: book.image,
                 aspectRatio: 70 / 105,
                 height: 125,
               ),

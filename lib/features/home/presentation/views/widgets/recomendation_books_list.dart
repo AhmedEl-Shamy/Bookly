@@ -13,9 +13,9 @@ class RecomendationList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<RecomendationBooksCubit, RecomendationBooksState>(
+    return BlocBuilder<RecommendationBooksCubit, RecommendationBooksState>(
       builder: (context, state) {
-        if (state is RecomendationBooksSuccess) {
+        if (state is RecommendationBooksSuccess) {
           return SizedBox(
             height: 150,
             child: ListView.builder(
@@ -26,7 +26,7 @@ class RecomendationList extends StatelessWidget {
                   RecomendationListItem(state.books[index]),
             ),
           );
-        } else if (state is RecomendationBooksFaild) {
+        } else if (state is RecommendationBooksFaild) {
           return CustomErrorWidget(state.failure.errorMsg);
         } else {
           return const SizedBox(

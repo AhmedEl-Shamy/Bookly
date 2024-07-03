@@ -49,7 +49,7 @@ class HomeRepoImpl extends HomeRepo {
   }
 
   @override
-  Future<Either<Failure, List<BookEntity>>> fetchRecomendationBooks({
+  Future<Either<Failure, List<BookEntity>>> fetchRecommendationBooks({
     required String category,
   }) async {
     try {

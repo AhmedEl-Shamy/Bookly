@@ -1,4 +1,4 @@
-import 'package:bookly/features/home/data/models/book_model/book_model.dart';
+import 'package:bookly/features/home/domain/entities/book_entity.dart';
 import 'package:flutter/material.dart';
 
 import '../utlis/assets.dart';
@@ -11,7 +11,7 @@ class NewestBooksItemBookInfo extends StatelessWidget {
   const NewestBooksItemBookInfo(this.book,{
     super.key,
   });
-  final BookModel book;
+  final BookEntity book;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -21,7 +21,7 @@ class NewestBooksItemBookInfo extends StatelessWidget {
         SizedBox(
           width: SizeConfig.widthBlock * 48,
           child: Text(
-            book.volumeInfo!.title!,
+            book.name,
             style: TextStyles.textStyle18.copyWith(
               fontFamily: AssetsData.gTSectraFineFamily,
             ),
@@ -30,7 +30,7 @@ class NewestBooksItemBookInfo extends StatelessWidget {
           ),
         ),
         Text(
-          book.volumeInfo!.authors!.join(' | '),
+          book.authors?.join(' | ') ?? '',
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
           style: TextStyles.textStyle14.copyWith(
