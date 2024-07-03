@@ -1,9 +1,8 @@
+import 'package:bookly/features/home/domain/entities/book_entity.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:bookly/core/utlis/either_type.dart';
 import 'package:bookly/core/utlis/failure.dart';
-import 'package:bookly/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly/features/home/domain/repositories/home_repo.dart';
-import 'package:equatable/equatable.dart';
 
 part 'featured_books_state.dart';
 
@@ -12,12 +11,12 @@ class FeaturedBooksCubit extends Cubit<FeaturedBooksState> {
   final HomeRepo homeRepo;
   Future<void> getFeaturedBooks() async {
     emit(FeaturedBooksLoading());
-    Either<Failure, List<BookModel>> data = await homeRepo.fetchFeaturedBooks();
-    data.fold(
-      errorFunction: (Failure error) {
+    Either<Failure, List<BookEntity>> result = await homeRepo.fetchFeaturedBooks();
+    result.fold(
+      (Failure error) {
         emit(FeaturedBooksFailed(error));
       },
-      successFunction: (List<BookModel> books) {
+      (List<BookEntity> books) {
         emit(FeaturedBooksSuccess(books));
       },
     );

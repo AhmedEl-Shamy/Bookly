@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/widgets/custom_error_widget.dart';
-import '../../view_models/cubit/recomendation_books_cubit.dart';
+import '../../controllers/recommendation_books_cubit/recommendation_books_cubit.dart';
 import 'recomendation_list_item.dart';
 
 class RecomendationList extends StatelessWidget {

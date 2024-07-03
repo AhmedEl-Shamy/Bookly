@@ -38,8 +38,8 @@ class ServerFailure extends Failure {
       return ServerFailure(response.data['error']['message']);
     } else if (statusCode == 404) {
       return ServerFailure('Request not found!');
-    } else if (statusCode == 500) {
-      return ServerFailure('Internal server error!');
+    } else if (statusCode >= 500) {
+      return ServerFailure('There was a problem with server, please try later!');
     } else {
       return ServerFailure('Oops!, there was an error, Please try again!');
     }

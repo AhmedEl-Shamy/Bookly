@@ -5,15 +5,15 @@ import 'package:dartz/dartz.dart';
 
 import '../entities/book_entity.dart';
 
-class FetchRecomendationBooksUseCase extends UseCase<List<BookEntity>, String>  {
+class FetchRecommendationBooksUseCase extends UseCase<List<BookEntity>, String>  {
   final HomeRepo _homeRepo;
 
-  FetchRecomendationBooksUseCase({
+  FetchRecommendationBooksUseCase({
     required HomeRepo homeRepo,
   }) : _homeRepo = homeRepo;
   
   @override
   Future<Either<Failure, List<BookEntity>>> call(String p) {
-    return _homeRepo.fetchRecomendationBooks(category: p);
+    return _homeRepo.fetchRecommendationBooks(category: p);
   }
 }
