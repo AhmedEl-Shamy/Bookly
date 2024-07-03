@@ -1,16 +1,13 @@
 part of 'recommendation_books_cubit.dart';
 
-sealed class RecommendationBooksState extends Equatable {
+sealed class RecommendationBooksState{
   const RecommendationBooksState();
-
-  @override
-  List<Object> get props => [];
 }
 
 final class RecommendationBooksInitial extends RecommendationBooksState {}
 
 final class RecommendationBooksSuccess extends RecommendationBooksState {
-  final List<BookModel> books;
+  final List<BookEntity> books;
 
   const RecommendationBooksSuccess({required this.books});
 }

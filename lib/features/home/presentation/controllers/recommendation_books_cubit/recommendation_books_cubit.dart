@@ -1,27 +1,31 @@
+import 'package:bookly/features/home/domain/entities/book_entity.dart';
+import 'package:bookly/features/home/domain/usecases/fetch_recommendation_books_usecase.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bookly/core/utlis/failure.dart';
-import 'package:bookly/features/home/data/models/book_model/book_model.dart';
-import 'package:equatable/equatable.dart';
 
-import '../../../../../core/utlis/either_type.dart';
-import '../../../domain/repositories/home_repo.dart';
 
 part 'recommendation_books_state.dart';
 
 class RecommendationBooksCubit extends Cubit<RecommendationBooksState> {
-  RecommendationBooksCubit(this.homeRepo) : super(RecommendationBooksInitial());
-  final HomeRepo homeRepo;
+  final FetchRecommendationBooksUseCase _fetchRecommendationBooksUseCase;
+
+  RecommendationBooksCubit({
+    required FetchRecommendationBooksUseCase fetchRecommendationBooksUseCase,
+  })  : _fetchRecommendationBooksUseCase = fetchRecommendationBooksUseCase,
+        super(RecommendationBooksInitial());
+        
   Future<void> getRecommendationBooks(String category) async {
     emit(RecommendationBooksLoading());
-    Either<Failure, List<BookModel>> data = await homeRepo.fetchRecommendationBooks(category: category);
+    Either<Failure, List<BookEntity>> data =
+        await _fetchRecommendationBooksUseCase.call(category);
     data.fold(
-      errorFunction: (Failure error) {
+      (Failure error) {
         emit(RecommendationBooksFaild(failure: error));
       },
-      successFunction: (List<BookModel> books){
+      (List<BookEntity> books) {
         emit(RecommendationBooksSuccess(books: books));
       },
     );
   }
 }
-
