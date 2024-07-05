@@ -1,4 +1,4 @@
-import 'package:bookly/config/services_config.dart';
+import 'package:bookly/core/utlis/dependency_injection.dart';
 import 'package:bookly/features/search/presentation/view_models/controllers/search_data_cubit.dart';
 import 'package:bookly/features/search/presentation/views/widgets/search_view_body.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +10,7 @@ class SearchView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => SearchDataCubit(ServicesConfig.searchRepo),
+      create: (context) => sl.get<SearchDataCubit>(),
       child: const Scaffold(
         body: SearchViewBody(),
       ),
