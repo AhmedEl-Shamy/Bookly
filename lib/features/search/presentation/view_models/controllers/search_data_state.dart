@@ -1,4 +1,4 @@
-part of 'search_cubit.dart';
+part of 'search_data_cubit.dart';
 
 sealed class SearchState extends Equatable {
   const SearchState();
@@ -9,7 +9,7 @@ sealed class SearchState extends Equatable {
 
 final class SearchInitial extends SearchState {}
 final class SearchSuccess extends SearchState {
-  final List<BookModel> books;
+  final List<BookEntity> books;
 
   const SearchSuccess({required this.books});
   

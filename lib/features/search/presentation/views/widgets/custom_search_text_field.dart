@@ -1,5 +1,5 @@
 
-import 'package:bookly/features/search/presentation/view_models/search_cubit/search_cubit.dart';
+import 'package:bookly/features/search/presentation/view_models/controllers/search_data_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -11,15 +11,15 @@ class CustomSearchTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      controller: BlocProvider.of<SearchCubit>(context).controller,
+      controller: BlocProvider.of<SearchDataCubit>(context).controller,
       keyboardType: TextInputType.text,
-      onSubmitted: (value) => BlocProvider.of<SearchCubit>(context).fetchSearchData(),
+      onSubmitted: (value) => BlocProvider.of<SearchDataCubit>(context).fetchSearchData(),
       decoration: InputDecoration(
         enabledBorder: customTextFieldBorder(),
         focusedBorder: customTextFieldBorder(),
         hintText: 'Search',
         suffixIcon: IconButton(
-          onPressed: () => BlocProvider.of<SearchCubit>(context).fetchSearchData(),
+          onPressed: () => BlocProvider.of<SearchDataCubit>(context).fetchSearchData(),
           icon: Image.asset(
             AssetsData.searchIcon,
             height: 24,

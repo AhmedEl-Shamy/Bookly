@@ -11,6 +11,11 @@ import 'package:bookly/features/home/domain/usecases/fetch_recommendation_books_
 import 'package:bookly/features/home/presentation/controllers/featured_books_cubit/featured_books_cubit.dart';
 import 'package:bookly/features/home/presentation/controllers/newest_books_cubit/newest_books_cubit.dart';
 import 'package:bookly/features/home/presentation/controllers/recommendation_books_cubit/recommendation_books_cubit.dart';
+import 'package:bookly/features/search/data/data_sources/serch_remote_data_source.dart';
+import 'package:bookly/features/search/data/repos/search_repo_impl.dart';
+import 'package:bookly/features/search/domain/repos/search_repo.dart';
+import 'package:bookly/features/search/domain/usecases/fetch_search_data_usecase.dart';
+import 'package:bookly/features/search/presentation/view_models/controllers/search_data_cubit.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
@@ -41,11 +46,23 @@ void setupLocator() {
     HomeLocalDataSourceImpl(dbService: sl.get<DBService<BookEntity>>()),
   );
 
+  sl.registerSingleton<SearchRemoteDataSource>(
+    SearchRemoteDataSourceImpl(
+      apiService: sl.get<ApiService>(),
+    ),
+  );
+
   // repos
   sl.registerSingleton<HomeRepo>(
     HomeRepoImpl(
       homeLocalDataSource: sl.get<HomeLocalDataSource>(),
       homeRemoteDataSource: sl.get<HomeRemoteDataSource>(),
+    ),
+  );
+
+  sl.registerSingleton<SearchRepo>(
+    SearchRepoImpl(
+      searchRemoteDataSource: sl.get<SearchRemoteDataSource>(),
     ),
   );
 
@@ -68,6 +85,12 @@ void setupLocator() {
     ),
   );
 
+  sl.registerSingleton<FetchSearchDataUsecase>(
+    FetchSearchDataUsecase(
+      searchRepo: sl.get<SearchRepo>(),
+    ),
+  );
+
   // Blocs & Cubits
   sl.registerFactory<FeaturedBooksCubit>(
     () => FeaturedBooksCubit(
@@ -83,7 +106,14 @@ void setupLocator() {
 
   sl.registerFactory<RecommendationBooksCubit>(
     () => RecommendationBooksCubit(
-      fetchRecommendationBooksUseCase: sl.get<FetchRecommendationBooksUseCase>(),
+      fetchRecommendationBooksUseCase:
+          sl.get<FetchRecommendationBooksUseCase>(),
+    ),
+  );
+
+  sl.registerFactory<SearchDataCubit>(
+    () => SearchDataCubit(
+      fetchSearchDataUsecase: sl.get<FetchSearchDataUsecase>(),
     ),
   );
 }
