@@ -5,7 +5,7 @@ import 'package:bookly/core/utlis/failure.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
-import '../../../data/repos/search_repo.dart';
+import '../../../domain/repos/search_repo.dart';
 
 part 'search_state.dart';
 

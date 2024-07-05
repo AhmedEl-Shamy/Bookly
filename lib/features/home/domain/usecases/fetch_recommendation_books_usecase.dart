@@ -5,7 +5,7 @@ import 'package:dartz/dartz.dart';
 
 import '../entities/book_entity.dart';
 
-class FetchRecommendationBooksUseCase extends UseCase<List<BookEntity>, String>  {
+class FetchRecommendationBooksUseCase extends UseCaseWithParameter<List<BookEntity>, String>  {
   final HomeRepo _homeRepo;
 
   FetchRecommendationBooksUseCase({
