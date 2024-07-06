@@ -1,4 +1,4 @@
-import 'package:bookly/features/home/data/models/book_model/book_model.dart';
+import 'package:bookly/features/home/domain/entities/book_entity.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
 
@@ -9,13 +9,13 @@ import '../../../../../core/utlis/text_styles.dart';
 class BookDetailsInfo extends StatelessWidget {
   const BookDetailsInfo(this.book, {super.key});
 
-  final BookModel book;
+  final BookEntity book;
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Text(
-          book.volumeInfo!.title!,
+          book.name,
           textAlign: TextAlign.center,
           style: TextStyles.titleMedium.copyWith(
             fontFamily: AssetsData.gTSectraFineFamily,
@@ -25,7 +25,7 @@ class BookDetailsInfo extends StatelessWidget {
           height: 5,
         ),
         Text(
-          book.volumeInfo!.authors!.join(' | '),
+          book.authors?.join(' | ') ?? '',
           textAlign: TextAlign.center,
           style: TextStyles.textStyle16.copyWith(
             fontWeight: FontWeight.w600,

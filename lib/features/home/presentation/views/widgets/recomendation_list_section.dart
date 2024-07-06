@@ -1,13 +1,14 @@
+import 'package:bookly/features/home/domain/entities/book_entity.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utlis/text_styles.dart';
-import 'recomendation_books_list.dart';
+import 'recomendation_books_list_bloc_consumer.dart';
 
-class RecomendationListWidget extends StatelessWidget {
-  const RecomendationListWidget({
-    super.key,
+class RecomendationListSection extends StatelessWidget {
+  const RecomendationListSection({
+    super.key, required this.book,
   });
-
+  final BookEntity book;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -24,7 +25,10 @@ class RecomendationListWidget extends StatelessWidget {
         const SizedBox(
           height: 15,
         ),
-        const RecomendationList(),
+        RecomendationListBlocConsumer(
+          book: book,
+          scrollController: ScrollController(),
+        ),
         const SizedBox(
           height: 10,
         )

@@ -17,5 +17,10 @@ final class RecommendationBooksFaild extends RecommendationBooksState {
 
   const RecommendationBooksFaild({required this.failure});
 }
-
 final class RecommendationBooksLoading extends RecommendationBooksState {}
+final class RecommendationBooksPaginationField extends RecommendationBooksState {
+  final Failure failure;
+
+  RecommendationBooksPaginationField({required this.failure});
+
+}

@@ -1,7 +1,7 @@
+import 'package:bookly/features/home/domain/entities/book_entity.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../data/models/book_model/book_model.dart';
 import '../../../../../core/utlis/colors.dart';
 import '../../../../../core/utlis/text_styles.dart';
 import '../../../../../core/widgets/custom_button.dart';
@@ -11,25 +11,25 @@ class BookActions extends StatelessWidget {
     this.book, {
     super.key,
   });
-  final BookModel book;
+  final BookEntity book;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Row(
         children: [
-          if (book.saleInfo!.saleability == 'FOR_SALE')
+          if (book.saleability == 'FOR_SALE')
             Expanded(
               child: CustomButton(
                 backgroundColor: Colors.white,
                 foregroundColor: Colors.black,
                 borderRadius: BorderRadius.horizontal(
                     left: const Radius.circular(15),
-                    right: (book.volumeInfo!.previewLink == null)
+                    right: (book.previewLink == null)
                         ? const Radius.circular(15)
                         :  Radius.zero),
                 onPressed: () async {
-                  Uri uri = Uri.parse(book.volumeInfo!.canonicalVolumeLink!);
+                  Uri uri = Uri.parse(book.canonicalVolumeLink!);
                   if (await canLaunchUrl(uri)) {
                     launchUrl(uri);
                   }
@@ -42,19 +42,19 @@ class BookActions extends StatelessWidget {
                 ),
               ),
             ),
-          if (book.volumeInfo!.previewLink != null)
+          if (book.previewLink != null && book.previewLink!.isNotEmpty)
             Expanded(
               child: CustomButton(
                 backgroundColor: ThemeColors.previewButtonColor,
                 foregroundColor: Colors.white,
                 borderRadius: BorderRadius.horizontal(
                   right: const Radius.circular(15),
-                  left: (book.saleInfo!.saleability != 'FOR_SALE')
+                  left: (book.saleability != 'FOR_SALE')
                       ? const Radius.circular(15)
                       : Radius.zero,
                 ),
                 onPressed: () async {
-                  Uri uri = Uri.parse(book.volumeInfo!.previewLink!);
+                  Uri uri = Uri.parse(book.previewLink!);
                   if (await canLaunchUrl(uri)) {
                     launchUrl(uri);
                   }
@@ -69,8 +69,8 @@ class BookActions extends StatelessWidget {
                 ),
               ),
             ),
-          if (book.volumeInfo!.previewLink == null &&
-              book.saleInfo!.saleability != 'FOR_SALE')
+          if ((book.previewLink == null || book.previewLink!.isEmpty) &&
+              book.saleability != 'FOR_SALE')
             Text(
               'This book is not Available!',
               style: TextStyles.textStyle16.copyWith(

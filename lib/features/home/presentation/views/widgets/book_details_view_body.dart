@@ -1,17 +1,17 @@
 import 'package:bookly/config/size_config.dart';
-import 'package:bookly/features/home/data/models/book_model/book_model.dart';
+import 'package:bookly/features/home/domain/entities/book_entity.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_details_appbar.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_details_info.dart';
 import 'package:bookly/core/widgets/book_image.dart';
 import 'package:flutter/material.dart';
 
 import 'book_actions.dart';
-import 'recomendation_list_widget.dart';
+import 'recomendation_list_section.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody(this.book, {super.key});
 
-  final BookModel book;
+  final BookEntity book;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class BookDetailsViewBody extends StatelessWidget {
                       borderRadius: BorderRadius.circular(16),
                       child: BookImage(
                         aspectRatio: 162 / 243,
-                        imageUrl: book.volumeInfo!.imageLinks?.thumbnail! ?? '',
+                        imageUrl: book.image,
                       ),
                     ),
                   ),
@@ -50,7 +50,7 @@ class BookDetailsViewBody extends StatelessWidget {
                   const SizedBox(
                     height: 30,
                   ),
-                  const RecomendationListWidget(),
+                  RecomendationListSection(book: book,),
                 ],
               ),
             ),

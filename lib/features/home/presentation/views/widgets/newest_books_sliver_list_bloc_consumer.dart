@@ -1,12 +1,11 @@
-import 'package:bookly/core/widgets/book_item.dart';
 import 'package:bookly/core/widgets/custom_error_widget.dart';
-import 'package:bookly/core/widgets/loading_widgets/book_item_loading.dart';
 import 'package:bookly/features/home/presentation/controllers/newest_books_cubit/newest_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../domain/entities/book_entity.dart';
+import 'newest_books_list_loading.dart';
 import 'newest_books_sliver_list.dart';
 
 class NewestBooksListSliverBlocConsumer extends StatefulWidget {
@@ -68,25 +67,7 @@ class _NewestBooksListSliverBlocConsumerState
             books: widget.books,
           );
         } else {
-          return SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (context, index) {
-                if (widget.books.length <= index) {
-                  return const Padding(
-                    padding: EdgeInsets.only(bottom: 20, left: 20, right: 20),
-                    child: BookItemLoading(),
-                  );
-                } else {
-                  return Padding(
-                    padding:
-                        const EdgeInsets.only(bottom: 20, left: 20, right: 20),
-                    child: BookItem(widget.books[index]),
-                  );
-                }
-              },
-              childCount: widget.books.length + 10,
-            ),
-          );
+          return NewestBooksListLoading(books: widget.books);
         }
       },
     );

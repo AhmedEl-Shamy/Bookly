@@ -8,6 +8,7 @@ import 'package:bookly/features/home/domain/repositories/home_repo.dart';
 import 'package:bookly/features/home/domain/usecases/fetch_featured_books_usecase.dart';
 import 'package:bookly/features/home/domain/usecases/fetch_newest_books_pagination.dart';
 import 'package:bookly/features/home/domain/usecases/fetch_newest_books_usecase.dart';
+import 'package:bookly/features/home/domain/usecases/fetch_recommendation_books_pagination_usecase.dart';
 import 'package:bookly/features/home/domain/usecases/fetch_recommendation_books_usecase.dart';
 import 'package:bookly/features/home/presentation/controllers/featured_books_cubit/featured_books_cubit.dart';
 import 'package:bookly/features/home/presentation/controllers/newest_books_cubit/newest_books_cubit.dart';
@@ -90,6 +91,12 @@ void setupLocator() {
     ),
   );
 
+  sl.registerSingleton<FetchRecommendationBooksPaginationUseCase>(
+    FetchRecommendationBooksPaginationUseCase(
+      homeRepo: sl.get<HomeRepo>(),
+    ),
+  );
+
   sl.registerSingleton<FetchSearchDataUsecase>(
     FetchSearchDataUsecase(
       searchRepo: sl.get<SearchRepo>(),
@@ -114,6 +121,7 @@ void setupLocator() {
     () => RecommendationBooksCubit(
       fetchRecommendationBooksUseCase:
           sl.get<FetchRecommendationBooksUseCase>(),
+        booksPaginationUsecase: sl.get<FetchRecommendationBooksPaginationUseCase>(),
     ),
   );
 

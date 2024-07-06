@@ -1,6 +1,6 @@
 import 'package:bookly/core/utlis/dependency_injection.dart';
 import 'package:bookly/core/utlis/durations.dart';
-import 'package:bookly/features/home/data/models/book_model/book_model.dart';
+import 'package:bookly/features/home/domain/entities/book_entity.dart';
 import 'package:bookly/features/home/presentation/controllers/recommendation_books_cubit/recommendation_books_cubit.dart';
 import 'package:bookly/features/home/presentation/views/home_view.dart';
 import 'package:bookly/features/search/presentation/views/search_view.dart';
@@ -35,10 +35,9 @@ class AppRouter {
           child: BlocProvider(
             create: (context) =>
                 sl.get<RecommendationBooksCubit>()..getRecommendationBooks(
-                    (state.extra as BookModel).volumeInfo!.categories?[0] ??
-                        'programming',
+                    (state.extra as BookEntity).category,
                   ),
-            child: BookDetailsView(state.extra as BookModel),
+            child: BookDetailsView(state.extra as BookEntity),
           ),
         ),
       ),
