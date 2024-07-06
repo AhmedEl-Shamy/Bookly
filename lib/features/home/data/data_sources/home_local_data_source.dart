@@ -1,6 +1,6 @@
 import 'package:bookly/core/services/db_service.dart';
 
-import '../../domain/entities/book_entity.dart';
+import '../../../../core/entities/book_entity.dart';
 
 abstract class HomeLocalDataSource {
   List<BookEntity> fetchFeaturedBooks();

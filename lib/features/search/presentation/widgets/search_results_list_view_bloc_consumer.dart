@@ -4,7 +4,7 @@ import 'package:bookly/features/search/presentation/controllers/search_data_cubi
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../home/domain/entities/book_entity.dart';
+import '../../../../core/entities/book_entity.dart';
 import 'search_data_list_view.dart';
 
 class SearchResultsListViewBlocConsumer extends StatefulWidget {

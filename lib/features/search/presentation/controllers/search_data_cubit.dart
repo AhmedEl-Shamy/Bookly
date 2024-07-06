@@ -1,4 +1,4 @@
-import 'package:bookly/features/home/domain/entities/book_entity.dart';
+import 'package:bookly/core/entities/book_entity.dart';
 import 'package:bookly/features/search/domain/usecases/fetch_search_data_pagination_usecase.dart';
 import 'package:bookly/features/search/domain/usecases/fetch_search_data_usecase.dart';
 import 'package:dartz/dartz.dart';

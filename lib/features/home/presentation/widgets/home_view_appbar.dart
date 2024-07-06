@@ -3,7 +3,7 @@ import 'package:bookly/core/utlis/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../../core/utlis/colors.dart';
+import '../../../../core/utlis/colors.dart';
 
 class CustomHomeAppbar extends StatelessWidget {
   const CustomHomeAppbar({

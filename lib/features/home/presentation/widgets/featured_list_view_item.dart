@@ -2,11 +2,11 @@ import 'dart:ui';
 
 import 'package:bookly/config/app_router.dart';
 import 'package:bookly/core/widgets/book_image.dart';
-import 'package:bookly/features/home/domain/entities/book_entity.dart';
+import 'package:bookly/core/entities/book_entity.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../../config/size_config.dart';
+import '../../../../config/size_config.dart';
 
 class FeaturedListViewItem extends StatelessWidget {
   const FeaturedListViewItem(this.book,{super.key});

@@ -3,7 +3,7 @@ import 'package:bookly/core/services/db_service.dart';
 import 'package:bookly/features/home/data/data_sources/home_local_data_source.dart';
 import 'package:bookly/features/home/data/data_sources/home_remote_data_source.dart';
 import 'package:bookly/features/home/data/repositories/home_repo_impl.dart';
-import 'package:bookly/features/home/domain/entities/book_entity.dart';
+import 'package:bookly/core/entities/book_entity.dart';
 import 'package:bookly/features/home/domain/repositories/home_repo.dart';
 import 'package:bookly/features/home/domain/usecases/fetch_featured_books_usecase.dart';
 import 'package:bookly/features/home/domain/usecases/fetch_newest_books_pagination.dart';

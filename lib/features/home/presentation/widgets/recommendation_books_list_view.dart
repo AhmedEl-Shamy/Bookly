@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../domain/entities/book_entity.dart';
+import '../../../../core/entities/book_entity.dart';
 import 'recomendation_list_item.dart';
 
 class RecommendationBooksListView extends StatelessWidget {

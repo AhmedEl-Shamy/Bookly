@@ -1,6 +1,6 @@
 import 'package:hive_flutter/hive_flutter.dart';
 
-import '../../features/home/domain/entities/book_entity_adapter.dart';
+import '../entities/book_entity_adapter.dart';
 
 abstract class DBService<T> {
   List<T> fetchAllBoxData(String boxName);

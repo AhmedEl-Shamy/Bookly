@@ -1,7 +1,7 @@
 import 'package:bookly/config/size_config.dart';
-import 'package:bookly/features/home/domain/entities/book_entity.dart';
-import 'package:bookly/features/home/presentation/views/widgets/book_details_appbar.dart';
-import 'package:bookly/features/home/presentation/views/widgets/book_details_info.dart';
+import 'package:bookly/core/entities/book_entity.dart';
+import 'package:bookly/features/home/presentation/widgets/book_details_appbar.dart';
+import 'package:bookly/features/home/presentation/widgets/book_details_info.dart';
 import 'package:bookly/core/widgets/book_image.dart';
 import 'package:flutter/material.dart';
 

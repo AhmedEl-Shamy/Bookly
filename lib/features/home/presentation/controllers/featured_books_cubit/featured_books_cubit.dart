@@ -1,4 +1,4 @@
-import 'package:bookly/features/home/domain/entities/book_entity.dart';
+import 'package:bookly/core/entities/book_entity.dart';
 import 'package:bookly/features/home/domain/usecases/fetch_featured_books_usecase.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

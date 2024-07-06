@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../utlis/text_styles.dart';
-import '../../features/home/presentation/views/widgets/book_rating.dart';
+import '../../features/home/presentation/widgets/book_rating.dart';
 
 class NewestBooksItemPrice extends StatelessWidget {
   const NewestBooksItemPrice({

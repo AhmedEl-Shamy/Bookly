@@ -1,10 +1,10 @@
-import 'package:bookly/features/home/domain/entities/book_entity.dart';
-import 'package:bookly/features/home/presentation/views/widgets/book_rating.dart';
+import 'package:bookly/core/entities/book_entity.dart';
+import 'package:bookly/features/home/presentation/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utlis/assets.dart';
-import '../../../../../core/utlis/colors.dart';
-import '../../../../../core/utlis/text_styles.dart';
+import '../../../../core/utlis/assets.dart';
+import '../../../../core/utlis/colors.dart';
+import '../../../../core/utlis/text_styles.dart';
 
 class BookDetailsInfo extends StatelessWidget {
   const BookDetailsInfo(this.book, {super.key});

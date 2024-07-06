@@ -1,7 +1,7 @@
-import 'package:bookly/features/home/domain/entities/book_entity.dart';
+import 'package:bookly/core/entities/book_entity.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utlis/text_styles.dart';
+import '../../../../core/utlis/text_styles.dart';
 import 'recomendation_books_list_bloc_consumer.dart';
 
 class RecomendationListSection extends StatelessWidget {

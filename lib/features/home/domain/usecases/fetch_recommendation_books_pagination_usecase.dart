@@ -3,7 +3,7 @@ import 'package:bookly/core/utlis/failure.dart';
 import 'package:bookly/features/home/domain/repositories/home_repo.dart';
 import 'package:dartz/dartz.dart';
 
-import '../entities/book_entity.dart';
+import '../../../../core/entities/book_entity.dart';
 
 class FetchRecommendationBooksPaginationUseCase extends UseCaseWithParameter<List<BookEntity>, Map<String, dynamic>> {
   final HomeRepo _homeRepo;

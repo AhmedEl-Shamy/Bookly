@@ -1,9 +1,9 @@
-import 'package:bookly/features/home/domain/entities/book_entity.dart';
+import 'package:bookly/core/entities/book_entity.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../../config/app_router.dart';
-import '../../../../../core/widgets/book_image.dart';
+import '../../../../config/app_router.dart';
+import '../../../../core/widgets/book_image.dart';
 
 class RecomendationListItem extends StatelessWidget {
   const RecomendationListItem(

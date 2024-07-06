@@ -1,10 +1,10 @@
-import 'package:bookly/features/home/presentation/views/widgets/recommendation_list_loading.dart';
+import 'package:bookly/features/home/presentation/widgets/recommendation_list_loading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../core/widgets/custom_error_widget.dart';
-import '../../../domain/entities/book_entity.dart';
-import '../../controllers/recommendation_books_cubit/recommendation_books_cubit.dart';
+import '../../../../core/widgets/custom_error_widget.dart';
+import '../../../../core/entities/book_entity.dart';
+import '../controllers/recommendation_books_cubit/recommendation_books_cubit.dart';
 import 'recommendation_books_list_view.dart';
 
 class RecomendationListBlocConsumer extends StatefulWidget {
@@ -49,6 +49,8 @@ class _RecomendationListBlocConsumerState
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<RecommendationBooksCubit, RecommendationBooksState>(
+      listenWhen: (previous, current) => !(previous is RecommendationBooksLoading && current is RecommendationBooksLoading),
+      buildWhen: (previous, current) => !(previous is RecommendationBooksLoading && current is RecommendationBooksLoading),
       listener: (context, state) {
         if (state is RecommendationBooksSuccess) {
           widget.books.addAll(state.books);
@@ -71,6 +73,7 @@ class _RecomendationListBlocConsumerState
           return SizedBox(
             height: 150,
             child: RecommendationListLoading(
+              scrollController: widget.scrollController,
               books: widget.books,
             ),
           );

@@ -1,10 +1,10 @@
 import 'package:bookly/core/services/api_service.dart';
-import 'package:bookly/features/home/data/models/book_model/book_model.dart';
+import 'package:bookly/core/models/book_model/book_model.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
 import '../../../../core/utlis/failure.dart';
-import '../../../home/domain/entities/book_entity.dart';
+import '../../../../core/entities/book_entity.dart';
 
 abstract class SearchRemoteDataSource {
   Future<Either<Failure, List<BookEntity>>> fetchSearchData({

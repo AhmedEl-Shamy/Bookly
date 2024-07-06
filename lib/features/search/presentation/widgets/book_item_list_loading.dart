@@ -2,7 +2,7 @@ import 'package:bookly/core/widgets/loading_widgets/book_item_loading.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/widgets/book_item.dart';
-import '../../../home/domain/entities/book_entity.dart';
+import '../../../../core/entities/book_entity.dart';
 
 class BookItemListLoading extends StatelessWidget {
   const BookItemListLoading({

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../domain/entities/book_entity.dart';
+import '../../../../core/entities/book_entity.dart';
 import 'newest_books_list_loading.dart';
 import 'newest_books_sliver_list.dart';
 
@@ -48,6 +48,8 @@ class _NewestBooksListSliverBlocConsumerState
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<NewestBooksCubit, NewestBooksState>(
+      listenWhen:(previous, current) => !(previous is NewestBooksLoading && current is NewestBooksLoading),
+      buildWhen:(previous, current) => !(previous is NewestBooksLoading && current is NewestBooksLoading),
       listener: (context, state) {
         if (state is NewestBooksSuccess) {
           widget.books.addAll(state.books);

@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../../core/utlis/colors.dart';
+import '../../../../core/utlis/colors.dart';
 
 
 class BookDetailsAppbar extends StatelessWidget {

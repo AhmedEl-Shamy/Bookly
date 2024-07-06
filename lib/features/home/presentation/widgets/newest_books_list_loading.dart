@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/widgets/book_item.dart';
-import '../../../../../core/widgets/loading_widgets/book_item_loading.dart';
-import '../../../domain/entities/book_entity.dart';
+import '../../../../core/widgets/book_item.dart';
+import '../../../../core/widgets/loading_widgets/book_item_loading.dart';
+import '../../../../core/entities/book_entity.dart';
 
 class NewestBooksListLoading extends StatelessWidget {
   const NewestBooksListLoading({

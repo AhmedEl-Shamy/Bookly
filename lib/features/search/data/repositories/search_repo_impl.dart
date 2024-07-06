@@ -2,7 +2,7 @@ import 'package:bookly/features/search/data/data_sources/serch_remote_data_sourc
 import 'package:dartz/dartz.dart';
 
 import '../../../../core/utlis/failure.dart';
-import '../../../home/domain/entities/book_entity.dart';
+import '../../../../core/entities/book_entity.dart';
 import '../../domain/repositories/search_repo.dart';
 
 class SearchRepoImpl extends SearchRepo {

@@ -1,10 +1,10 @@
-import 'package:bookly/features/home/domain/entities/book_entity.dart';
+import 'package:bookly/core/entities/book_entity.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../../../core/utlis/colors.dart';
-import '../../../../../core/utlis/text_styles.dart';
-import '../../../../../core/widgets/custom_button.dart';
+import '../../../../core/utlis/colors.dart';
+import '../../../../core/utlis/text_styles.dart';
+import '../../../../core/widgets/custom_button.dart';
 
 class BookActions extends StatelessWidget {
   const BookActions(
