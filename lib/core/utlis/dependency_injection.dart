@@ -6,14 +6,15 @@ import 'package:bookly/features/home/data/repositories/home_repo_impl.dart';
 import 'package:bookly/features/home/domain/entities/book_entity.dart';
 import 'package:bookly/features/home/domain/repositories/home_repo.dart';
 import 'package:bookly/features/home/domain/usecases/fetch_featured_books_usecase.dart';
+import 'package:bookly/features/home/domain/usecases/fetch_newest_books_pagination.dart';
 import 'package:bookly/features/home/domain/usecases/fetch_newest_books_usecase.dart';
 import 'package:bookly/features/home/domain/usecases/fetch_recommendation_books_usecase.dart';
 import 'package:bookly/features/home/presentation/controllers/featured_books_cubit/featured_books_cubit.dart';
 import 'package:bookly/features/home/presentation/controllers/newest_books_cubit/newest_books_cubit.dart';
 import 'package:bookly/features/home/presentation/controllers/recommendation_books_cubit/recommendation_books_cubit.dart';
 import 'package:bookly/features/search/data/data_sources/serch_remote_data_source.dart';
-import 'package:bookly/features/search/data/repos/search_repo_impl.dart';
-import 'package:bookly/features/search/domain/repos/search_repo.dart';
+import 'package:bookly/features/search/data/repositories/search_repo_impl.dart';
+import 'package:bookly/features/search/domain/repositories/search_repo.dart';
 import 'package:bookly/features/search/domain/usecases/fetch_search_data_usecase.dart';
 import 'package:bookly/features/search/presentation/view_models/controllers/search_data_cubit.dart';
 import 'package:dio/dio.dart';
@@ -79,6 +80,10 @@ void setupLocator() {
     ),
   );
 
+  sl.registerSingleton<FetchNewestBooksPaginationUseCase>(
+    FetchNewestBooksPaginationUseCase(homeRepo: sl.get<HomeRepo>()),
+  );
+
   sl.registerSingleton<FetchRecommendationBooksUseCase>(
     FetchRecommendationBooksUseCase(
       homeRepo: sl.get<HomeRepo>(),
@@ -101,6 +106,7 @@ void setupLocator() {
   sl.registerFactory<NewestBooksCubit>(
     () => NewestBooksCubit(
       fetchNewestBooksUseCase: sl.get<FetchNewestBooksUseCase>(),
+      fetchNewestBooksPaginationUseCase: sl.get<FetchNewestBooksPaginationUseCase>(),
     ),
   );
 

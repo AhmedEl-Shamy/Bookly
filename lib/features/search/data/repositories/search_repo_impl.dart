@@ -3,7 +3,7 @@ import 'package:dartz/dartz.dart';
 
 import '../../../../core/utlis/failure.dart';
 import '../../../home/domain/entities/book_entity.dart';
-import '../../domain/repos/search_repo.dart';
+import '../../domain/repositories/search_repo.dart';
 
 class SearchRepoImpl extends SearchRepo {
   final SearchRemoteDataSource _searchRemoteDataSource;
@@ -14,6 +14,6 @@ class SearchRepoImpl extends SearchRepo {
   @override
   Future<Either<Failure, List<BookEntity>>> fetchSearchData(
       String searchStr) async {
-    return _searchRemoteDataSource.fetchSearchData(searchStr);
+    return _searchRemoteDataSource.fetchSearchData(searchStr: searchStr);
   }
 }

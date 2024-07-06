@@ -7,7 +7,10 @@ import '../../../../core/utlis/failure.dart';
 import '../../../home/domain/entities/book_entity.dart';
 
 abstract class SearchRemoteDataSource {
-  Future<Either<Failure, List<BookEntity>>> fetchSearchData(String searchStr);
+  Future<Either<Failure, List<BookEntity>>> fetchSearchData({
+    required String searchStr,
+    int startIndex = 0,
+  });
 }
 
 class SearchRemoteDataSourceImpl extends SearchRemoteDataSource {
@@ -17,12 +20,14 @@ class SearchRemoteDataSourceImpl extends SearchRemoteDataSource {
       : _apiService = apiService;
 
   @override
-  Future<Either<Failure, List<BookEntity>>> fetchSearchData(
-      String searchStr) async {
+  Future<Either<Failure, List<BookEntity>>> fetchSearchData({
+    required String searchStr,
+    int startIndex = 0,
+  }) async {
     try {
       Map<String, dynamic> data = await _apiService.get(
         endPoint:
-            '/volumes?Filtering=free-ebooks&Sorting=relevance&q=subject:$searchStr',
+            '/volumes?Filtering=free-ebooks&Sorting=relevance&q=subject:$searchStr&startIndex=$startIndex',
       );
       List<BookEntity> books = getBookList(data);
       return right(books);

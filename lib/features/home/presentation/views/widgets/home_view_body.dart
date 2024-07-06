@@ -7,10 +7,15 @@ import 'package:bookly/features/home/presentation/views/widgets/home_view_appbar
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'newest_books_list_sliver.dart';
+import 'newest_books_sliver_list_bloc_consumer.dart';
 
 class HomeViewBody extends StatelessWidget {
-  const HomeViewBody({super.key});
+  const HomeViewBody({
+    super.key,
+    required this.scrollController,
+  });
+
+  final ScrollController scrollController;
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +23,7 @@ class HomeViewBody extends StatelessWidget {
       child: RefreshIndicator(
         onRefresh: () => _refresh(context),
         child: CustomScrollView(
+          controller: scrollController,
           slivers: [
             const CustomHomeAppbar(),
             SliverToBoxAdapter(
@@ -45,7 +51,9 @@ class HomeViewBody extends StatelessWidget {
                 ],
               ),
             ),
-            const BestSellerListSliver()
+            NewestBooksListSliverBlocConsumer(
+              scrollController: scrollController,
+            ),
           ],
         ),
       ),
@@ -57,4 +65,3 @@ class HomeViewBody extends StatelessWidget {
     BlocProvider.of<NewestBooksCubit>(context).getNewestBooks();
   }
 }
-
