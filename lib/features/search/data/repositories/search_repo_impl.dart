@@ -12,8 +12,10 @@ class SearchRepoImpl extends SearchRepo {
       : _searchRemoteDataSource = searchRemoteDataSource;
 
   @override
-  Future<Either<Failure, List<BookEntity>>> fetchSearchData(
-      String searchStr) async {
-    return _searchRemoteDataSource.fetchSearchData(searchStr: searchStr);
+  Future<Either<Failure, List<BookEntity>>> fetchSearchData({
+    required String searchStr,
+    int startIndex = 0,
+  }) async {
+    return _searchRemoteDataSource.fetchSearchData(searchStr: searchStr, startIndex: startIndex);
   }
 }

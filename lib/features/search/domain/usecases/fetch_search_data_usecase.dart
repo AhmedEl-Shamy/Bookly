@@ -12,6 +12,6 @@ class FetchSearchDataUsecase extends UseCaseWithParameter<List<BookEntity>, Stri
 
   @override
   Future<Either<Failure, List<BookEntity>>> call(String p) {
-    return _searchRepo.fetchSearchData(p);
+    return _searchRepo.fetchSearchData(searchStr: p);
   }
 }

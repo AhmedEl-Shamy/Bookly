@@ -1,5 +1,5 @@
 
-import 'package:bookly/features/search/presentation/view_models/controllers/search_data_cubit.dart';
+import 'package:bookly/features/search/presentation/controllers/search_data_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -16,8 +16,9 @@ import 'package:bookly/features/home/presentation/controllers/recommendation_boo
 import 'package:bookly/features/search/data/data_sources/serch_remote_data_source.dart';
 import 'package:bookly/features/search/data/repositories/search_repo_impl.dart';
 import 'package:bookly/features/search/domain/repositories/search_repo.dart';
+import 'package:bookly/features/search/domain/usecases/fetch_search_data_pagination_usecase.dart';
 import 'package:bookly/features/search/domain/usecases/fetch_search_data_usecase.dart';
-import 'package:bookly/features/search/presentation/view_models/controllers/search_data_cubit.dart';
+import 'package:bookly/features/search/presentation/controllers/search_data_cubit.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
@@ -102,6 +103,12 @@ void setupLocator() {
       searchRepo: sl.get<SearchRepo>(),
     ),
   );
+  
+  sl.registerSingleton<FetchSearchDataPaginationUseCase>(
+    FetchSearchDataPaginationUseCase(
+      searchRepo: sl.get<SearchRepo>(),
+    ),
+  );
 
   // Blocs & Cubits
   sl.registerFactory<FeaturedBooksCubit>(
@@ -128,6 +135,7 @@ void setupLocator() {
   sl.registerFactory<SearchDataCubit>(
     () => SearchDataCubit(
       fetchSearchDataUsecase: sl.get<FetchSearchDataUsecase>(),
+      fetchSearchDataPaginationUseCase: sl.get<FetchSearchDataPaginationUseCase>(),
     ),
   );
 }

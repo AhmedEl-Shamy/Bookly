@@ -21,3 +21,9 @@ final class SearchFailure extends SearchState {
 
 }
 final class SearchLoading extends SearchState {}
+final class SearchPaginationFailure extends SearchState {
+  final Failure failure;
+
+  const SearchPaginationFailure({required this.failure});
+
+}

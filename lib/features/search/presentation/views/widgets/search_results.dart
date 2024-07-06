@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import '../../../../../core/utlis/text_styles.dart';
-import 'search_results_list.dart';
+import 'search_results_list_view_bloc_consumer.dart';
 
 class SearchResults extends StatelessWidget {
   const SearchResults({
@@ -10,17 +11,19 @@ class SearchResults extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
+        const Text(
           'Search Results',
           style: TextStyles.titleMedium,
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
-        SearchResultsList(),
+        SearchResultsListViewBlocConsumer(
+          scrollController: ScrollController(),
+        ),
       ],
     );
   }
