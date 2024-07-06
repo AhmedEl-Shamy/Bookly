@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import '../../../../../core/utlis/text_styles.dart';
+import '../../../../core/utlis/text_styles.dart';
 import 'search_results_list_view_bloc_consumer.dart';
 
 class SearchResults extends StatelessWidget {

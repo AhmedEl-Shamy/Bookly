@@ -3,7 +3,7 @@ import 'package:bookly/features/search/presentation/controllers/search_data_cubi
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../core/utlis/assets.dart';
+import '../../../../core/utlis/assets.dart';
 
 class CustomSearchTextField extends StatelessWidget {
   const CustomSearchTextField({super.key});

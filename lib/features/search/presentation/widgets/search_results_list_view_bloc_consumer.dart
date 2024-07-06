@@ -1,11 +1,11 @@
 import 'package:bookly/core/widgets/custom_error_widget.dart';
-import 'package:bookly/features/search/presentation/views/widgets/book_item_list_loading.dart';
+import 'package:bookly/features/search/presentation/widgets/book_item_list_loading.dart';
 import 'package:bookly/features/search/presentation/controllers/search_data_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../core/widgets/book_item.dart';
-import '../../../../home/domain/entities/book_entity.dart';
+import '../../../home/domain/entities/book_entity.dart';
+import 'search_data_list_view.dart';
 
 class SearchResultsListViewBlocConsumer extends StatefulWidget {
   SearchResultsListViewBlocConsumer({
@@ -79,31 +79,6 @@ class _SearchResultsListViewBlocConsumerState
           return const SizedBox();
         }
       },
-    );
-  }
-}
-
-class SearchResultsListView extends StatelessWidget {
-  const SearchResultsListView({
-    super.key,
-    required this.books,
-    required this.scrollController,
-  });
-
-  final List<BookEntity> books;
-  final ScrollController scrollController;
-
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.builder(
-        padding: EdgeInsets.zero,
-        itemBuilder: (context, index) => Padding(
-          padding: const EdgeInsets.only(bottom: 20),
-          child: BookItem(books[index]),
-        ),
-        itemCount: books.length,
-      ),
     );
   }
 }
