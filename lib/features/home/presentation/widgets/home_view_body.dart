@@ -2,7 +2,7 @@ import 'package:bookly/config/size_config.dart';
 import 'package:bookly/core/utlis/text_styles.dart';
 import 'package:bookly/features/home/presentation/controllers/featured_books_cubit/featured_books_cubit.dart';
 import 'package:bookly/features/home/presentation/controllers/newest_books_cubit/newest_books_cubit.dart';
-import 'package:bookly/features/home/presentation/widgets/featured_list_view.dart';
+import 'package:bookly/features/home/presentation/widgets/featured_carousel_slider_bloc_builder.dart';
 import 'package:bookly/features/home/presentation/widgets/home_view_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -35,7 +35,7 @@ class HomeViewBody extends StatelessWidget {
                   ),
                   SizedBox(
                     height: SizeConfig.heightBlock * 25,
-                    child: const FeaturedListView(),
+                    child: const FeaturedCarouselSliderBlocBuilder(),
                   ),
                   const Padding(
                     padding: EdgeInsets.only(
