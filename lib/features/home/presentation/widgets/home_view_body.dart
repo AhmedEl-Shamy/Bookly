@@ -53,6 +53,7 @@ class HomeViewBody extends StatelessWidget {
             ),
             NewestBooksListSliverBlocConsumer(
               scrollController: scrollController,
+              books: BlocProvider.of<NewestBooksCubit>(context).allBooks,
             ),
           ],
         ),

@@ -21,9 +21,7 @@ class SearchResults extends StatelessWidget {
         const SizedBox(
           height: 20,
         ),
-        SearchResultsListViewBlocConsumer(
-          scrollController: ScrollController(),
-        ),
+        SearchResultsListViewBlocConsumer(),
       ],
     );
   }

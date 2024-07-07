@@ -10,7 +10,7 @@ part 'newest_books_state.dart';
 class NewestBooksCubit extends Cubit<NewestBooksState> {
   final FetchNewestBooksUseCase _fetchNewestBooksUseCase;
   final FetchNewestBooksPaginationUseCase _fetchNewestBooksPaginationUseCase;
-  
+
   NewestBooksCubit({
     required FetchNewestBooksUseCase fetchNewestBooksUseCase,
     required FetchNewestBooksPaginationUseCase
@@ -18,6 +18,8 @@ class NewestBooksCubit extends Cubit<NewestBooksState> {
   })  : _fetchNewestBooksUseCase = fetchNewestBooksUseCase,
         _fetchNewestBooksPaginationUseCase = fetchNewestBooksPaginationUseCase,
         super(NewestBooksInitial());
+
+  final List<BookEntity> allBooks = [];
 
   Future<void> getNewestBooks() async {
     emit(NewestBooksLoading());
@@ -28,6 +30,7 @@ class NewestBooksCubit extends Cubit<NewestBooksState> {
         emit(NewestBooksFailed(error));
       },
       (List<BookEntity> books) {
+        allBooks.addAll(books);
         emit(NewestBooksSuccess(books));
       },
     );
@@ -42,10 +45,9 @@ class NewestBooksCubit extends Cubit<NewestBooksState> {
         emit(NewestBooksPaginationFailed(error));
       },
       (List<BookEntity> books) {
+        allBooks.addAll(books);
         emit(NewestBooksSuccess(books));
       },
     );
   }
-
-
 }

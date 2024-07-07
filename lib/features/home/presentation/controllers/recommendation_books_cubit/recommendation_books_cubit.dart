@@ -19,7 +19,7 @@ class RecommendationBooksCubit extends Cubit<RecommendationBooksState> {
         super(
           RecommendationBooksInitial(),
         );
-
+  final List<BookEntity> allBooks = [];
   Future<void> getRecommendationBooks(String category) async {
     emit(RecommendationBooksLoading());
     Either<Failure, List<BookEntity>> data =
@@ -29,6 +29,7 @@ class RecommendationBooksCubit extends Cubit<RecommendationBooksState> {
         emit(RecommendationBooksFaild(failure: error));
       },
       (List<BookEntity> books) {
+        allBooks.addAll(books);
         emit(RecommendationBooksSuccess(books: books));
       },
     );
@@ -48,6 +49,7 @@ class RecommendationBooksCubit extends Cubit<RecommendationBooksState> {
         emit(RecommendationBooksPaginationField(failure: error));
       },
       (List<BookEntity> books) {
+        allBooks.addAll(books);
         emit(RecommendationBooksSuccess(books: books));
       },
     );

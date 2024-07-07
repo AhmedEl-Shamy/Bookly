@@ -38,7 +38,7 @@ class HomeRepoImpl extends HomeRepo {
       {int startIndex = 0}) async {
     try {
       List<BookEntity> books = _homeLocalDataSource.fetchNewestBooks();
-      if (books.isNotEmpty) {
+      if (books.isNotEmpty && books.length < 10) {
         return right(books);
       }
       books = await _homeRemoteDataSource.fetchNewestBooks(startIndex: startIndex);

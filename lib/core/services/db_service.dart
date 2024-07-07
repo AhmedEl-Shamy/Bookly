@@ -21,7 +21,7 @@ class DBServiceImpl<T> extends DBService<T> {
   @override
   Future<void> chacheListData(String boxName, List<T> data) async {
     Box box = Hive.box(boxName);
-    if (box.values.length <= 20) {
+    if (box.values.length <= 10) {
       await box.addAll(data);
     }
   }
