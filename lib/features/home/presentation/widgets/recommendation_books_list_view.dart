@@ -1,9 +1,9 @@
-import 'package:bookly/features/home/presentation/controllers/recommendation_books_cubit/recommendation_books_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/entities/book_entity.dart';
-import '../../../../core/widgets/loading_widgets/recommendation_list_item_loading.dart';
+import '../controllers/recommendation_books_cubit/recommendation_books_cubit.dart';
+import 'recommendation_list_item_loading.dart';
 import 'recomendation_list_item.dart';
 
 class RecommendationBooksListView extends StatefulWidget {

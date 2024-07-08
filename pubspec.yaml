@@ -11,7 +11,6 @@ dependencies:
   carousel_slider: ^4.2.1
   dartz: ^0.10.1
   dio: ^5.4.0
-  equatable: ^2.0.5
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.3

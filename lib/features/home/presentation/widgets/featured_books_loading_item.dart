@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:bookly/core/widgets/loading_widgets/book_image_loading.dart';
 import 'package:flutter/material.dart';
 
-import '../../../config/size_config.dart';
+import '../../../../config/size_config.dart';
 
 class FeaturedBooksLoadingItem extends StatelessWidget {
   const FeaturedBooksLoadingItem({super.key});

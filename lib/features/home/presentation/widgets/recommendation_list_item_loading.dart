@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'book_image_loading.dart';
+import '../../../../core/widgets/loading_widgets/book_image_loading.dart';
 
 class RecomendationListItemLoading extends StatelessWidget {
   const RecomendationListItemLoading({
