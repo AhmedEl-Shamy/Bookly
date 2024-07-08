@@ -17,6 +17,13 @@ Bookly is an e-commerce bookstore app built with Flutter and Dart. The app lever
 - **Dio Package**: For making HTTP requests and handling API calls.
 
 ## Screenshots
+![splash_screen](https://github.com/AhmedEl-Shamy/Bookly/assets/100457739/f4ec9882-a976-488c-8c9a-3567acc71cc3)
+###
+![home](https://github.com/AhmedEl-Shamy/Bookly/assets/100457739/38155b50-e1b7-4bb7-be03-79c7e75be24c)
+###
+![book_details](https://github.com/AhmedEl-Shamy/Bookly/assets/100457739/37c82fe5-2369-4062-a0a7-e7c037807632)
+###
+![search](https://github.com/AhmedEl-Shamy/Bookly/assets/100457739/dd1bde86-7ea0-4274-bf59-d9015fe96131)
 
 ## Getting Started
 
