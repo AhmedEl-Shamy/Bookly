@@ -69,7 +69,3 @@ The project uses the following dependencies:
 - `cahced_network_image`: for caching images.
 - `hive` and `hive_flutter`: for caching data.
 - `dartz`: For functional programming constructs such as Option, Either, and more.
-
-
-
-![Preview Splash Screen](https://drive.google.com/file/d/1UZotM8unV69ic-lsoLZcYN2Fvy0pjwt1/view)
